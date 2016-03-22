@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <h1>FairMuse</h1>
+  <p class="lead">
+    <img ng-src="images/main.jpg" alt="let_music_play"><br>
+    Imagine new ways and help building them.
+  </p>
+    <input class='search' placeholder='what are you looking for?' ng-model='query'>
+</div>
+
+<div class="row info">
+  <h4>MakersAcademy - Ronin</h4>
+  <p>
+    <ul>
+      <li uib-dropdown class="dropdown">
+        <button uib-dropdown-toggle class="dropdown-toggle">
+          Click me to see the awesome team members name!
+        </button>
+        <ul uib-dropdownmenu class="dropdown-menu">
+          <li ng-repeat="name in main.awesomeTeam">
+            <a>{{name}}</a>
+          </li>
+        </ul>
+      </li>
+   </ul>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">Cool!<span class="glyphicon glyphicon-ok"></span></a></p>
+  </p>
+
+  <h4>Info</h4>
+  <p>
+    Let the music play.
+  </p>
+
+  <h4>Contact</h4>
+  <p>Not yet.</p>
+</div>

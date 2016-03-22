@@ -1,0 +1,9 @@
+front-end/logs/*
+front-end/!.gitkeep
+front-end/node_modules/
+front-end/bower_components/
+front-end/tmp
+front-end/.DS_Store
+front-end/.idea
+front-end/.sass-cache
+front-end/.tmp
