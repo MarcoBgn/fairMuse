@@ -3,26 +3,27 @@ class ChargesController < ApplicationController
   def new
   end
   
-  def show
-    render json: @charge
+  def index
   end
   
   def create
-   p @amount = 50
-          
+    @amount = 50
+   
     customer = Stripe::Customer.create(
-        email: params[:stripeEmail], 
-        source: params[:stripeToken])
+      email: params[:stripeEmail], 
+      source: params[:stripeToken])
           
-   p @charge = Stripe::Charge.create(
-        customer: customer.id, 
-        amount: @amount,
-        description: 'artist contribution',
-        currency: 'gbp'
-        ) 
+    charge = Stripe::Charge.create(
+      customer: customer.id, 
+      amount: @amount,
+      description: 'artist contribution',
+      currency: 'GBP'
+      ) 
+      
+      redirect_to 'http://localhost:9000/#/success'
           
     rescue Stripe::CardError => e 
-              flash[:error.message] = e.message
-              redirect_to new_charge_path
+      flash[:error.message] = e.message
+      redirect_to 'http://localhost:9000/#/failure'
   end
 end
