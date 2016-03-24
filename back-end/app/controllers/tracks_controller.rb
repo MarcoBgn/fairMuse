@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
   before_action :set_track, only: [:show, :update, :destroy]
+  #before_filter :process_params, only: [:create, :update]
 
   def index
     @tracks = Track.all
@@ -45,6 +46,10 @@ class TracksController < ApplicationController
     end
 
     def track_params
-      params.require(:track).permit(:name)
+      params.require(:track).permit(:name, :url, :genre)
     end
+    
+    #def process_params
+    #  p params[:track]
+    #end
 end

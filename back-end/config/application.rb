@@ -23,7 +23,7 @@ module BackEnd
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post]
+        resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
