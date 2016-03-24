@@ -8,16 +8,18 @@ describe('Controller: LoginCtrl', function () {
   var LoginCtrl,
       scope;
 
+
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     LoginCtrl = $controller('LoginCtrl', {
       $scope: scope
     });
+    LoginCtrl.user = {email: "name", password: "password"};
   }));
 
   describe('Receives and stores data from a form', function(){
     it('has login data', function(){
-      expect(LoginCtrl.logindata).toEqual("LoginCtrl.user.name")
+      expect(LoginCtrl.sendForm()).toEqual({email: "name", password: "password"})
     });
   });
 });

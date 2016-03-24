@@ -45,7 +45,9 @@ fairMuse.controller('PlayerCtrl',
       this.config.sources = this.getSong(id);
     };
     this.currentSongName = function(){
-      return this.config.sources[0].name
+      if (this.config.sources) {
+        return this.config.sources[0].name
+      }
     }
   }]
 );

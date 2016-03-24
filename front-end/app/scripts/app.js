@@ -32,12 +32,12 @@ var fairMuse = angular
       .when('/songs', {
         templateUrl: 'views/songs.html',
         controller: 'MainCtrl',
-        controlleras: 'main'
+        controllerAs: 'main'
       })
-      .when('login', {
+      .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
-        controlleras: 'login'
+        controllerAs: 'login'
       })
       .otherwise({
         redirectTo: '/'
