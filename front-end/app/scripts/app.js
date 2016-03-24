@@ -10,7 +10,8 @@ var fairMuse = angular
     'ngTouch',
     'ui.bootstrap',
     'com.2fdevs.videogular',
-		'com.2fdevs.videogular.plugins.controls'
+		'com.2fdevs.videogular.plugins.controls',
+    'angularFileUpload'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,6 +29,11 @@ var fairMuse = angular
         templateUrl: 'views/success.html',
         controller: 'SuccessCtrl',
         controllerAs: 'success'
+      })
+      .when('/account', {
+        templateUrl: 'views/account.html',
+        controller: 'AccountCtrl',
+        controllerAs: 'account'
       })
       .otherwise({
         redirectTo: '/'
