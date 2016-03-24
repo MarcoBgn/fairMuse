@@ -41,21 +41,25 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
               <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/player">Player</a></li>
+              <li><a ng-href="#/">Player</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container">
-    <div ng-view=""></div>
+    <div ng-controller="PlayerCtrl as player" class="container">
+      <button ng-click="player.changeSource(1)">Change source 1</button>
+      <button ng-click="player.changeSource(2)">Change source 2</button>
+      <div ng-view></div>
+      <div ng-show="player.config.sources">
+        <div ng-include="'views/player.html'"></div>
+      </div>
     </div>
 
     <div class="footer">
       <div class="container">
         <p><span class="glyphicon glyphicon-heart"></span> from the fairMuse team <span><span class="glyphicon glyphicon-copyright-mark"></span> 2016 fairMuse Ltd </span></p>
-       
       </div>
     </div>
 

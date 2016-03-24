@@ -15,7 +15,7 @@ var fairMuse = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch', 
+    'ngTouch',
     'ui.bootstrap',
     'com.2fdevs.videogular',
 		'com.2fdevs.videogular.plugins.controls'
@@ -31,11 +31,6 @@ var fairMuse = angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
-      })
-      .when('/player', {
-        templateUrl: 'views/player.html',
-        controller: 'PlayerCtrl',
-        controllerAs: 'player'
       })
       .otherwise({
         redirectTo: '/'

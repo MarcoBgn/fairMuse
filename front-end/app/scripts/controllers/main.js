@@ -12,7 +12,7 @@ angular.module('fairMuseApp')
     this.awesomeTeam = [
       'Russel',
       'Mark',
-      'Yan-yi', 
+      'Yan-yi',
       'Marco'
     ];
   });

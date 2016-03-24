@@ -16,7 +16,7 @@ fairMuse.controller('PlayerCtrl',
         songId: 2,
         sources: [
           {
-            src: "songs/testSong.mp3",
+            src: "songs/testsong.mp3",
             type: "audio/mpeg"
           }
         ]
@@ -29,18 +29,16 @@ fairMuse.controller('PlayerCtrl',
       }
     };
 
-    var currentSong;
-
     this.getSong = function(id) {
      for(var i = 0; i < this.songList.length; i++) {
        if(this.songList[i].songId === id) {
-         return currentSong = this.songList[i].sources;
-       };
-     };
+         return this.songList[i].sources;
+       }
+     }
     };
 
     this.changeSource = function(id){
       this.config.sources = this.getSong(id);
-    }
+    };
   }]
 );

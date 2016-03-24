@@ -4,9 +4,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 .videogular-container {
-    width: 400px ;
-    height: 320px;
+    width: 100% !important;
+    height: 50px !important;
     margin: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 .videogular-container.audio {
