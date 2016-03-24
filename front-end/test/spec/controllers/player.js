@@ -25,4 +25,13 @@ describe('Controller: PlayerCtrl', function () {
       expect(PlayerCtrl.config.sources[0].src).toEqual("songs/testsong.mp3");
     });
   });
+  describe('displaying songs', function(){
+    it("should display the song's name", function(){
+      PlayerCtrl.changeSource(1);
+      expect(PlayerCtrl.config.sources[0].name).toEqual("default song")
+    })
+    it('contains the name within the songlist', function(){
+      expect(PlayerCtrl.songList[0].name).toEqual("default song")
+    })
+  })
 });

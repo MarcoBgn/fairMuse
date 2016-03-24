@@ -5,19 +5,23 @@ fairMuse.controller('PlayerCtrl',
     this.songList = [
       {
         songId: 1,
+        name: "default song",
         sources: [
           {
             src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/audios/videogular.mp3"),
-            type: "audio/mpeg"
+            type: "audio/mpeg",
+            name: "default song"
           }
         ]
       },
       {
         songId: 2,
+        name: "Yan-Yi's song",
         sources: [
           {
             src: "songs/testsong.mp3",
-            type: "audio/mpeg"
+            type: "audio/mpeg",
+            name: "Yan-Yi's song"
           }
         ]
       }
@@ -40,5 +44,8 @@ fairMuse.controller('PlayerCtrl',
     this.changeSource = function(id){
       this.config.sources = this.getSong(id);
     };
+    this.currentSongName = function(){
+      return this.config.sources[0].name
+    }
   }]
 );

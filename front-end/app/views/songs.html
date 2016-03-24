@@ -1,0 +1,3 @@
+<div ng-repeat="song in player.songList">
+  {{song.songId}} {{song.name}} <button ng-click="player.changeSource(song.songId)">Play {{song.name}}</button>
+</div>

@@ -29,6 +29,11 @@ var fairMuse = angular
         controller: 'SuccessCtrl',
         controllerAs: 'success'
       })
+      .when('/songs', {
+        templateUrl: 'views/songs.html',
+        controller: 'MainCtrl',
+        controlleras: 'main'
+      })
       .otherwise({
         redirectTo: '/'
       });
