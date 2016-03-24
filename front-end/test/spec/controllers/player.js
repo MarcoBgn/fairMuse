@@ -15,7 +15,14 @@ describe('Controller: PlayerCtrl', function () {
     });
   }));
 
-  it('Should store information about songs url', function () {
-    expect(PlayerCtrl.config.sources.length).toBe(2);
+  describe('music selection', function() {
+    it('sources should be empty by default', function() {
+      expect(PlayerCtrl.config.sources).not.toBeDefined();
+    });
+
+    it('should change source of the player', function() {
+      PlayerCtrl.changeSource(2);
+      expect(PlayerCtrl.config.sources[0].src).toEqual("songs/testsong.mp3");
+    });
   });
 });
