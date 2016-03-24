@@ -1,25 +1,23 @@
-'use strict';
+// 'use strict';
 
-describe('Controller: LoginCtrl', function () {
+// describe('Controller: LoginCtrl', function () {
 
-  beforeEach(module('fairMuseApp'));
-  beforeEach(module('ui.bootstrap'));
+//   beforeEach(module('fairMuseApp'));
+//   beforeEach(module('ui.bootstrap'));
 
-  var LoginCtrl,
-      scope;
+//   var LoginCtrl, scope, authenticationService;
+//   beforeEach(inject(function($controller, $rootScope, authenticationService) {
+//     scope = $rootScope.$new();
+//     LoginCtrl = $controller('LoginCtrl',  {
+//       '$scope' : scope,
+//     });
+//     LoginCtrl.user = {email: "name", password: "password"};
+//   }));
 
-
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    LoginCtrl = $controller('LoginCtrl', {
-      $scope: scope
-    });
-    LoginCtrl.user = {email: "name", password: "password"};
-  }));
-
-  describe('Receives and stores data from a form', function(){
-    it('has login data', function(){
-      expect(LoginCtrl.sendForm()).toEqual({email: "name", password: "password"})
-    });
-  });
-});
+//   describe('calls an authentication service', function(){
+//     it('calls a service', function(){
+//       expect(authenticationService.login(user)).toHaveBeenCalled()
+//       LoginCtrl.sendForm()
+//     });
+//   });
+// });
