@@ -1,1 +1,14 @@
 <p>Fair Music. For Real.</p>
+
+<form action="http://localhost:3000/charges" method="POST">
+  How much: <input type='number' name='amount' value='amount'>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+    data-image="/img/documentation/checkout/marketplace.png"
+    data-name="Stripe.com"
+    data-description="2 widgets"
+    data-amount=""
+    data-locale="auto">
+  </script>
+</form>

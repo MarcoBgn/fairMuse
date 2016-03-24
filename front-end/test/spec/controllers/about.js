@@ -15,7 +15,4 @@ describe('Controller: AboutCtrl', function () {
     });
   }));
 
-  it('should attach the team member names to the scope', function () {
-    expect(AboutCtrl.awesomeTeam.length).toBe(4);
-  });
 });

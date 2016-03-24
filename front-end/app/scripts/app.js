@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name fairMuseApp
- * @description
- * # fairMuseApp
- *
- * Main module of the application.
- */
 var fairMuse = angular
   .module('fairMuseApp', [
     'ngAnimate',
@@ -31,6 +23,11 @@ var fairMuse = angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/success', {
+        templateUrl: 'views/success.html',
+        controller: 'SuccessCtrl',
+        controllerAs: 'success'
       })
       .otherwise({
         redirectTo: '/'
