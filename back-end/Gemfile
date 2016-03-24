@@ -9,7 +9,7 @@ gem 'spring', :group => :development
 
 gem 'pg'
 
-gem 'web-console'
+gem 'web-console', :group => :development
 
 gem 'stripe'
 
@@ -17,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails' 
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 

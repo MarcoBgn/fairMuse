@@ -6,8 +6,7 @@ class ChargesController < ApplicationController
   def new
   end
   
-  def show
-    render json: @charge
+  def index
   end
   
   def create
@@ -17,17 +16,16 @@ class ChargesController < ApplicationController
       email: params[:stripeEmail], 
       source: params[:stripeToken])
 
-    p @charge = Stripe::Charge.create(
+    @charge = Stripe::Charge.create(
       customer: customer.id, 
       amount: @amount,
       description: 'artist contribution',
-      currency: 'gbp'
-      ) 
+      currency: 'gbp')
 
-    redirect_to 'http://localhost:9000/#/about'
-  rescue Stripe::CardError => error
-    flash[:error] = error.message
-    redirect_to new_charge_path
+      redirect_to 'http://localhost:9000/#/about'
+    rescue Stripe::CardError => error
+      flash[:error] = error.message
+      redirect_to new_charge_path
+    end
   end
-end
 end
