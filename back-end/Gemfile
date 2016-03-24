@@ -13,6 +13,8 @@ gem 'web-console', :group => :development
 
 gem 'stripe'
 
+gem 'rack-cors'
+
 group :development, :test do
   gem 'rspec-rails' 
   gem 'capybara'

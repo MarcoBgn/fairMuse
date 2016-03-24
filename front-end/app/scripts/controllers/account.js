@@ -3,7 +3,7 @@
 fairMuse.controller('AccountCtrl', ['Upload', '$timeout', function (Upload, $timeout) {
   this.uploadSong = function(file) {
     file.upload = Upload.upload({
-      url: '~/Desktop/test/',
+      url: 'http://localhost:3000/tracks',
       data: {trackname: this.trackname, file: file}
     });
 
