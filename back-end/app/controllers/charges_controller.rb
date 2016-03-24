@@ -1,5 +1,8 @@
 class ChargesController < ApplicationController
-    
+
+  def index 
+  end
+
   def new
   end
   
@@ -8,21 +11,23 @@ class ChargesController < ApplicationController
   end
   
   def create
-   p @amount = 50
-          
+    @amount = 50
+
     customer = Stripe::Customer.create(
-        email: params[:stripeEmail], 
-        source: params[:stripeToken])
-          
-   p @charge = Stripe::Charge.create(
-        customer: customer.id, 
-        amount: @amount,
-        description: 'artist contribution',
-        currency: 'gbp'
-        ) 
-          
-    rescue Stripe::CardError => e 
-              flash[:error.message] = e.message
-              redirect_to new_charge_path
+      email: params[:stripeEmail], 
+      source: params[:stripeToken])
+
+    p @charge = Stripe::Charge.create(
+      customer: customer.id, 
+      amount: @amount,
+      description: 'artist contribution',
+      currency: 'gbp'
+      ) 
+
+    redirect_to 'http://localhost:9000/#/about'
+  rescue Stripe::CardError => error
+    flash[:error] = error.message
+    redirect_to new_charge_path
   end
+end
 end
