@@ -12,6 +12,7 @@ class TracksController < ApplicationController
   end
 
   def create
+    p params
     @track = Track.new(track_params)
 
     if @track.save
@@ -30,7 +31,7 @@ class TracksController < ApplicationController
       render json: @track.errors, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
     @track.destroy
 
@@ -44,6 +45,6 @@ class TracksController < ApplicationController
     end
 
     def track_params
-      params[:track]
+      params.require(:track).permit(:name)
     end
 end
