@@ -34,6 +34,11 @@ var fairMuse = angular
         controller: 'MainCtrl',
         controlleras: 'main'
       })
+      .when('login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controlleras: 'login'
+      })
       .otherwise({
         redirectTo: '/'
       });
