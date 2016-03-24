@@ -11,7 +11,7 @@ var fairMuse = angular
     'ui.bootstrap',
     'com.2fdevs.videogular',
 		'com.2fdevs.videogular.plugins.controls',
-    'angularFileUpload'
+    'ngFileUpload'
   ])
   .config(function ($routeProvider) {
     $routeProvider
