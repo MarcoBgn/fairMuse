@@ -8,7 +8,7 @@ angular.module('fairMuseApp').service('authenticationService', function($http, $
 			return (localStorage.getItem('auth_token')) ? true : false;
 		};
 		this.LogOut = function(){
-			return $http.delete("http://localhost:3000/api/logout")
+			return $http.delete("http://localhost:3000/api/logout.json")
 		}
 
 	});
