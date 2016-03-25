@@ -21,8 +21,7 @@ describe('Controller: authenticationService', function(){
   it('sends a post to the backend', function(){
     httpBackend.flush()
     authenticationService.login()
-    httpBackend.flush()
-    expect(location.path()).toBe('/songs')
+    expect(httpBackend.flush).not.toThrow();
   })
 
 });

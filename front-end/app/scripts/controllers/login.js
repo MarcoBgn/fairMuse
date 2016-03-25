@@ -12,19 +12,20 @@ angular.module('fairMuseApp')
       this.wrongCredentials = true;
     }
  		
- 		this.sendForm = function(email, password, wrongCredentials) {
+ 		this.sendForm = function(email, password) {
        this.user = {email: this.email,
                     password: this.password}
  		   var promise = authenticationService.login(this.user);
- 		  promise.then(success, error);
+ 		  promise.then(success, error); 
+      console.log(promise.then(success, error))
+    };
  		  
  		  var success = function(response){
  		  localStorage.setItem('auth_token', response.data.auth_token);
  		  location.path('/songs')
  		  };
  		  
- 		  var error = function() {
+ 		  var error = function(response) {
   		  
      };
-    };
 });
