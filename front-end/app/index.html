@@ -26,12 +26,12 @@
             <a class="navbar-brand" href="#/">fairMuse</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller='IndexCtrl as index' >
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
+              <li class="active"><a href="#/" >Home</a></li>
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/songs">Songs</a></li>
+              <li ng-show='index.LoggedIn'><a ng-click="index.logout()">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -79,6 +79,8 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/player.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/controllers/index.js"></script>
         <script src="scripts/services/authentication_service.js"></script>
 
 </body>

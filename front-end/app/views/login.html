@@ -1,4 +1,6 @@
-
+<div class='alert alert-danger' ng-show="login.wrongCredentials">
+	Wrong Credentials
+</div>
 <form name="login_form" ng-submit="login.sendForm(email, password)">
 <label for="email">Email</label>
 <input type="email" name="email" ng-model="login.email">
