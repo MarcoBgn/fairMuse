@@ -7,7 +7,6 @@ angular.module('fairMuseApp')
 		this.email = "";
     this.password = "";
     this.wrongCredentials = false;
-    
     this.test = function() {
       this.wrongCredentials = true;
     }
@@ -17,11 +16,11 @@ angular.module('fairMuseApp')
                     password: this.password}
  		   var promise = authenticationService.login(this.user);
  		  promise.then(success, error); 
-      console.log(promise.then(success, error))
     };
  		  
  		  var success = function(response){
  		  localStorage.setItem('auth_token', response.data.auth_token);
+      console.log(localStorage)
  		  location.path('/songs')
  		  };
  		  
