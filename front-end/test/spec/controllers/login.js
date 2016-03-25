@@ -5,7 +5,7 @@ describe('Controller: LoginCtrl', function () {
   beforeEach(module('fairMuseApp'));
   beforeEach(module('ui.bootstrap'));
 
- var authenticationService, LoginCtrl;
+ var authenticationService, LoginCtrl, user;
   
   beforeEach(inject(function($controller, _authenticationService_) {
     authenticationService = _authenticationService_
@@ -16,6 +16,6 @@ describe('Controller: LoginCtrl', function () {
     it('calls a service', function(){
       spyOn(authenticationService, "login")
       LoginCtrl.sendForm()
-    	expect(authenticationService.login()).toHaveBeenCalled;
+    	expect(authenticationService.login(user)).toHaveBeenCalled;
     });
  });
