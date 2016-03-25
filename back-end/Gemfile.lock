@@ -189,6 +189,7 @@ DEPENDENCIES
   rack-cors
   rails (= 4.2.5.1)
   rails-api
+  responders (~> 2.0)
   rspec-rails
   selenium-webdriver
   spring

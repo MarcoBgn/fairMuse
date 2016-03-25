@@ -7,21 +7,24 @@ angular.module('fairMuseApp')
 		this.email = "";
     this.password = "";
     this.wrongCredentials = false;
+    
+    this.test = function() {
+      this.wrongCredentials = true;
+    }
  		
- 		this.sendForm = function(email, password) {
-      this.user = {email: this.email,
-                   password: this.password}
- 		  var promise = authenticationService.login(this.user);
- 		 promise.then(success, error);
- 		 };
- 		 
- 		 var success = function(response){
- 		 localStorage.setItem('auth_token', response.data.auth_token);
- 		 location.path('/songs')
- 		 };
- 		 
- 		 var error = function() {
-  		this.wrongCredentials = true;
-     }; 
- 	
- 	});
+ 		this.sendForm = function(email, password, wrongCredentials) {
+       this.user = {email: this.email,
+                    password: this.password}
+ 		   var promise = authenticationService.login(this.user);
+ 		  promise.then(success, error);
+ 		  
+ 		  var success = function(response){
+ 		  localStorage.setItem('auth_token', response.data.auth_token);
+ 		  location.path('/songs')
+ 		  };
+ 		  
+ 		  var error = function() {
+  		  
+     };
+    };
+});

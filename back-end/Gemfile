@@ -16,6 +16,8 @@ gem 'stripe'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'responders', '~> 2.0'
+
 group :development, :test do
   gem 'rspec-rails' 
   gem 'capybara'
