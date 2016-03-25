@@ -6,7 +6,7 @@ fairMuse.controller('AccountCtrl', ['Upload', '$timeout', function (Upload, $tim
       url: 'http://localhost:3000/tracks',
       data: { 
         track: {
-          name: this.trackName, url: "test/url", genre: this.genre, file: file
+          name: this.trackName, genre: this.genre, file: file
         }
       }
     });

@@ -16,7 +16,16 @@ fairMuse.controller('PlayerCtrl',
         songId: 2,
         sources: [
           {
-            src: "songs/testsong.mp3",
+            src: $sce.trustAsResourceUrl("http://s3-eu-west-1.amazonaws.com/fairmusetracks.bucket/tracks/files/000/000/001/original/testsong.mp3?1458920645"),
+            type: "audio/mpeg"
+          }
+        ]
+      },
+      {
+        songId: 3,
+        sources: [
+          {
+            src: $sce.trustAsResourceUrl("http://s3-eu-west-1.amazonaws.com/fairmusetracks.bucket/tracks/files/000/000/002/original/Modern_World_%28Anouk_Cover%29.mp3?1458922573"),
             type: "audio/mpeg"
           }
         ]
