@@ -13,8 +13,9 @@ class TracksController < ApplicationController
   end
 
   def create
-    p params
     @track = Track.new(track_params)
+    @file = params[:file]
+    p "______THIS__#{@file}___"
 
     if @track.save
       render json: @track, status: :created, location: @track
@@ -25,7 +26,7 @@ class TracksController < ApplicationController
 
   def update
     @track = Track.find(params[:id])
-
+   
     if @track.update(track_params)
       head :no_content
     else
@@ -46,10 +47,10 @@ class TracksController < ApplicationController
     end
 
     def track_params
-      params.require(:track).permit(:name, :url, :genre)
+      params.require(:track).permit(:name, :url, :genre, :file)
     end
     
-    #def process_params
-    #  p params[:track]
-    #end
+    def process_params
+      params[:track]
+    end
 end

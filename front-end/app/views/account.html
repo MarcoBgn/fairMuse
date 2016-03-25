@@ -2,9 +2,11 @@
   <form name="fileUploadForm">
     <fieldset>
       <legend>Upload your track</legend>
-      Track name:
-      <input type="text" name="trackName" ng-model="trackname" size="31" required>
-      <i ng-show="fileUploadForm.trackName.$error.required">*required</i>
+      <label for="trackname"> Track name: </label>
+      <input type="text" name="trackname" ng-model="account.trackName" size="31" required>
+      <i ng-show="fileUploadForm.trackname.$error.required">*required</i><br>
+      <label for="genre"> Genre: </label>
+      <input type="text" ng-model="account.genre" placeholder="What is your sound?" size="24">
       <br>File:
       <input type="file" ngf-select ng-model="audioFile" name="file" accept="audio/*" ngf-max-size="5MB" required ngf-model-invalid="errorFile">
       <i ng-show="fileUploadForm.file.$error.required">*required</i>
