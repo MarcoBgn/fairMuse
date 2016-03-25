@@ -8,6 +8,4 @@ RSpec.describe ChargesController, type: :controller do
     skip("Add a hash of attributes invalid for your model")
   }
   let(:valid_session) { {} }
-
-
 end

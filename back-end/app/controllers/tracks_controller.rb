@@ -1,10 +1,8 @@
 class TracksController < ApplicationController
   before_action :set_track, only: [:show, :update, :destroy]
-  #before_filter :process_params, only: [:create, :update]
 
   def index
     @tracks = Track.all
-
     render json: @tracks
   end
 
@@ -14,8 +12,6 @@ class TracksController < ApplicationController
 
   def create
     @track = Track.new(track_params)
-    @file = params[:file]
-    p "______THIS__#{@file}___"
 
     if @track.save
       render json: @track, status: :created, location: @track
@@ -36,7 +32,6 @@ class TracksController < ApplicationController
 
   def destroy
     @track.destroy
-
     head :no_content
   end
 
@@ -47,10 +42,6 @@ class TracksController < ApplicationController
     end
 
     def track_params
-      params.require(:track).permit(:name, :url, :genre, :file)
-    end
-    
-    def process_params
-      params[:track]
+      params.require(:track).permit(:name, :genre, :file)
     end
 end
