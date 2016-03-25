@@ -5,19 +5,17 @@ describe('Controller: LoginCtrl', function () {
   beforeEach(module('fairMuseApp'));
   beforeEach(module('ui.bootstrap'));
 
-  var LoginCtrl, scope, authenticationService;
-  beforeEach(inject(function($controller, $rootScope, authenticationService) {
-    scope = $rootScope.$new();
+ var authenticationService, LoginCtrl;
+  
+  beforeEach(inject(function($controller, _authenticationService_) {
+    authenticationService = _authenticationService_
     LoginCtrl = $controller('LoginCtrl',  {
-      '$scope' : scope,
-    });
-    LoginCtrl.user = {email: "name", password: "password"};
+  }); 
   }));
 
-  describe('calls an authentication service', function(){
     it('calls a service', function(){
-      expect(authenticationService.login(user)).toHaveBeenCalled()
+      spyOn(authenticationService, "login")
       LoginCtrl.sendForm()
+    	expect(authenticationService.login()).toHaveBeenCalled;
     });
-  });
-});
+ });

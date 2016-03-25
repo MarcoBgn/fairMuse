@@ -1,15 +1,11 @@
 'use strict';
 
 angular.module('fairMuseApp')
-  .controller('LoginCtrl', function(authenticationService, $location) {
+  .controller('LoginCtrl', function(authenticationService) {
   	var user, success, error, promise, authenticationService
 		this.user = {}
   	user = this.user 
-  	location = $location
  		this.sendForm = function() {
- 		 return authenticationService.login().success(function(){
- 		 	 location.path('/views/player');
- 		 });
- 	}
-  
-  });
+ 		 authenticationService.login(user);
+ 		 };
+ 	});
