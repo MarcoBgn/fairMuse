@@ -5,7 +5,8 @@ angular.module('fairMuseApp')
   	var user, success, error, promise, authenticationService
 		this.user = {}
   	user = this.user 
- 		this.sendForm = function() {
+  	console.log(user)
+ 		this.sendForm = function(user) {
  		 authenticationService.login(user);
  		 };
  	});
