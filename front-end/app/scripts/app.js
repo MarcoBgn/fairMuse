@@ -10,7 +10,8 @@ var fairMuse = angular
   'ngTouch',
   'ui.bootstrap',
   'com.2fdevs.videogular',
-  'com.2fdevs.videogular.plugins.controls'
+  'com.2fdevs.videogular.plugins.controls',
+  'flash'
   ])
 
 .factory('authInterceptor', function($q, $location){

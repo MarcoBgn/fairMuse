@@ -1,6 +1,6 @@
 <div ng-include="'views/navbar.html'"></div>
-<div ng-controller='LoginCtrl as login' class='alert alert-danger' ng-show="login.wrongCredentials">
-	Wrong Credentials
+<div ng-controller='LoginCtrl as login'>
+<flash:messages>
 </div>
 <form name="login_form" ng-submit="login.sendForm(email, password)">
 <label for="email">Email</label>
