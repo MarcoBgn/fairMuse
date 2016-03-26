@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Track, type: :model do
   before do
+
     @track = Track.create(name: "Song1", genre: "Electro", file: fixture_file_upload("testsong.mp3", 'audio/mpeg'))
   end
 
