@@ -2,7 +2,7 @@ require "rails_helper"
 require "payments_helper"
 require "upload_helper"
 
-
+Capybara.default_driver = :rack_test
 RSpec.configure do |config|
   config.include Paperclip::Shoulda::Matchers
   config.include ActionDispatch::TestProcess

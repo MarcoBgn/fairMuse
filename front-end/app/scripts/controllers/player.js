@@ -5,28 +5,34 @@ fairMuse.controller('PlayerCtrl',
     this.songList = [
       {
         songId: 1,
+        name: "default song",
         sources: [
           {
             src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/audios/videogular.mp3"),
-            type: "audio/mpeg"
+            type: "audio/mpeg",
+            name: "default song"
           }
         ]
       },
       {
         songId: 2,
+        name: "Yan-Yi's song",
         sources: [
           {
             src: $sce.trustAsResourceUrl("http://s3-eu-west-1.amazonaws.com/fairmusetracks.bucket/tracks/files/000/000/001/original/testsong.mp3?1458920645"),
-            type: "audio/mpeg"
+            type: "audio/mpeg",
+            name: "Yan-Yi's song"
           }
         ]
       },
       {
         songId: 3,
+        name: "Another Track",
         sources: [
           {
             src: $sce.trustAsResourceUrl("http://s3-eu-west-1.amazonaws.com/fairmusetracks.bucket/tracks/files/000/000/002/original/Modern_World_%28Anouk_Cover%29.mp3?1458922573"),
-            type: "audio/mpeg"
+            type: "audio/mpeg",
+            name: "Another Track"
           }
         ]
       }
@@ -49,5 +55,10 @@ fairMuse.controller('PlayerCtrl',
     this.changeSource = function(id){
       this.config.sources = this.getSong(id);
     };
+    this.currentSongName = function(){
+      if (this.config.sources) {
+        return this.config.sources[0].name
+      }
+    }
   }]
 );

@@ -3,6 +3,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+#song-name{
+  color: red;
+  text-align: center;
+}
+
 .videogular-container {
     width: 100% !important;
     height: 50px !important;
@@ -50,4 +55,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
         width: 728px;
         height: 50px;
     }
+
+
 }

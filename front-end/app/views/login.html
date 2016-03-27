@@ -1,0 +1,11 @@
+<div ng-include="'views/navbar.html'"></div>
+<div ng-controller='LoginCtrl as login'>
+<flash:messages>
+</div>
+<form name="login_form" ng-submit="login.sendForm(email, password)">
+<label for="email">Email</label>
+<input type="email" name="email" ng-model="login.email">
+<label for="password">Password</label>
+<input type="password" name="password" ng-model="login.password">
+<button type="submit">Log in</button>
+</form>

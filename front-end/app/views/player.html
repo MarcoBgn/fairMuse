@@ -1,7 +1,7 @@
 <div class="videogular-container">
   <videogular vg-theme="player.config.theme.url" vg-clear-media-on-navigate="false" vg-auto-play="true" class="videogular-container audio">
+    <div><p id="song-name">{{player.currentSongName()}} </p></div>
     <vg-media vg-src="player.config.sources" vg-type="audio"></vg-media>
-
     <vg-controls>
       <vg-play-pause-button></vg-play-pause-button>
       <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
