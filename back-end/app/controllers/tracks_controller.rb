@@ -12,7 +12,6 @@ class TracksController < ApplicationController
 
   def create
     @track = Track.new(track_params)
-
     if @track.save
       render json: @track, status: :created, location: @track
     else
@@ -22,7 +21,6 @@ class TracksController < ApplicationController
 
   def update
     @track = Track.find(params[:id])
-   
     if @track.update(track_params)
       head :no_content
     else
@@ -36,7 +34,6 @@ class TracksController < ApplicationController
   end
 
   private
-
     def set_track
       @track = Track.find(params[:id])
     end

@@ -1,5 +1,7 @@
 require "rails_helper"
 require "payments_helper"
+require "upload_helper"
+
 
 RSpec.configure do |config|
   config.include Paperclip::Shoulda::Matchers
@@ -32,4 +34,10 @@ RSpec.configure do |config|
 	config.mock_with :rspec do |mocks|
 		mocks.verify_partial_doubles = true
 	end
+  
+  config.after(:each) do 
+    Dir["#{Rails.root}/public/system/tracks/files/**/**/*.*"].each do |file|
+      File.delete(file)
+    end
+  end
 end
