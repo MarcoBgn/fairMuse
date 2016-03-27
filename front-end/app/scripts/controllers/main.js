@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fairMuseApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', function() {
     this.awesomeTeam = [
       'Russel',
       'Mark',

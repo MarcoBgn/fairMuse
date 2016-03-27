@@ -33,6 +33,7 @@ module.exports = function(config) {
       'bower_components/videogular/videogular.js',
       'bower_components/videogular-controls/vg-controls.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-flash/angular-flash.js',
       // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',

@@ -7,39 +7,13 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/player.css">
- 
+
   </head>
   <body ng-app="fairMuseApp">
 
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">fairMuse</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/songs">Songs</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div ng-controller="PlayerCtrl as player" class="container">
-      <div ng-view></div>
+      <div ng-view>
+      </div>
       <div ng-show="player.config.sources">
         <div ng-include="'views/player.html'"></div>
       </div>
@@ -64,6 +38,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-flash/angular-flash.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -73,11 +48,17 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/videogular/videogular.js"></script>
     <script src="bower_components/videogular-controls/vg-controls.js"></script>
- 
+
+
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/player.js"></script>
- 
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/services/authentication_service.js"></script>
+
+
 </body>
 </html>
