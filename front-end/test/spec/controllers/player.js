@@ -1,15 +1,16 @@
 'use strict';
 
 describe('Controller: PlayerCtrl', function () {
-
+  var deferred; 
+  
   beforeEach(module('fairMuseApp'));
   beforeEach(module('ui.bootstrap'));
 
-  var PlayerCtrl,
-    scope;
+  var PlayerCtrl, scope, streamTrackingService;
 
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _streamTrackingService_) {
     scope = $rootScope.$new();
+    streamTrackingService = _streamTrackingService_
     PlayerCtrl = $controller('PlayerCtrl', {
       $scope: scope
     });
@@ -21,8 +22,10 @@ describe('Controller: PlayerCtrl', function () {
     });
 
     it('should change source of the player', function() {
+      spyOn(streamTrackingService, 'track');
       PlayerCtrl.changeSource(2);
       expect(PlayerCtrl.config.sources[0].name).toEqual("Yan-Yi's song");
+      expect(streamTrackingService.track).toHaveBeenCalled();
     });
   });
   describe('displaying songs', function(){
