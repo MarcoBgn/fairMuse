@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :charges
   resources :tracks
   resources :users, only: [:index]
+  resources :streams, only: [:create]
   devise_for :users, skip: [ :sessions ]
   as :user do
     post '/api/login' => 'sessions#create'
