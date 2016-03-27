@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  
+
+  resources :charges
+  resources :tracks
+  resources :users, only: [:index]
   devise_for :users, skip: [ :sessions ]
   as :user do
     post '/api/login' => 'sessions#create'
@@ -7,7 +10,5 @@ Rails.application.routes.draw do
   end
 
   match '*any' => 'application#options', :via => [:options]
-  
-  resources :charges
-  resources :users, only: [:index]
 end
+

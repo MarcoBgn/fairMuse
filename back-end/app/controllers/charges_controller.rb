@@ -1,6 +1,4 @@
 class ChargesController < ApplicationController
-  def index
-  end
 
   def new
   end
@@ -21,7 +19,7 @@ class ChargesController < ApplicationController
       description: 'artist contribution',
       currency: 'gbp')
 
-    redirect_to 'http://localhost:9000/#/about'
+    redirect_to 'http://localhost:9000/#/success'
   rescue Stripe::CardError => error
     flash[:error] = error.message
     redirect_to new_charge_path

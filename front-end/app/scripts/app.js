@@ -11,6 +11,7 @@ var fairMuse = angular
   'ui.bootstrap',
   'com.2fdevs.videogular',
   'com.2fdevs.videogular.plugins.controls',
+  'ngFileUpload',
   'flash'
   ])
 
@@ -29,8 +30,6 @@ var fairMuse = angular
       }
       return $q.reject(response);
     }
-
-
   }
 })
 
@@ -69,6 +68,11 @@ var fairMuse = angular
     templateUrl: 'views/user.html',
     controller: 'UserCtrl',
     controllerAs: 'user'
+  })
+  .when('/account', {
+    templateUrl: 'views/account.html',
+    controller: 'AccountCtrl',
+    controllerAs: 'account'
   })
   .otherwise({
     redirectTo: '/'

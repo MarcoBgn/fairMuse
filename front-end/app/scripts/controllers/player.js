@@ -19,9 +19,20 @@ fairMuse.controller('PlayerCtrl',
         name: "Yan-Yi's song",
         sources: [
           {
-            src: "songs/testsong.mp3",
+            src: $sce.trustAsResourceUrl("http://s3-eu-west-1.amazonaws.com/fairmusetracks.bucket/tracks/files/000/000/001/original/testsong.mp3?1458920645"),
             type: "audio/mpeg",
             name: "Yan-Yi's song"
+          }
+        ]
+      },
+      {
+        songId: 3,
+        name: "Another Track",
+        sources: [
+          {
+            src: $sce.trustAsResourceUrl("http://s3-eu-west-1.amazonaws.com/fairmusetracks.bucket/tracks/files/000/000/002/original/Modern_World_%28Anouk_Cover%29.mp3?1458922573"),
+            type: "audio/mpeg",
+            name: "Another Track"
           }
         ]
       }
