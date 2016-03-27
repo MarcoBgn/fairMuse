@@ -22,7 +22,7 @@ describe('Controller: PlayerCtrl', function () {
 
     it('should change source of the player', function() {
       PlayerCtrl.changeSource(2);
-      expect(PlayerCtrl.config.sources[0].src).toEqual("songs/testsong.mp3");
+      expect(PlayerCtrl.config.sources[0].name).toEqual("Yan-Yi's song");
     });
   });
   describe('displaying songs', function(){
