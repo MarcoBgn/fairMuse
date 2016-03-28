@@ -8,6 +8,6 @@ class RegistrationsController < Devise::RegistrationsController
 		else
 			render nothing: true, status: 422
 		end
-	end
+  end
 
 end

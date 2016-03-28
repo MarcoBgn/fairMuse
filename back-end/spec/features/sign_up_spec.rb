@@ -1,5 +1,11 @@
 feature 'Sign up' do
+  after(:all) do
+ puts User.all.count
+ DatabaseCleaner.clean
+ puts User.all.count
+  end
   scenario 'allows a user to sign up', js: true do
+
     visit 'http://localhost:9000/'
     click_link('Sign up')
     fill_in 'email', with: 'email@gmail.com'
