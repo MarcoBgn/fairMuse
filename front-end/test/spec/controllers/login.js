@@ -6,13 +6,9 @@ describe('Controller: LoginCtrl', function () {
 
   beforeEach(module('fairMuseApp'));
   beforeEach(module('ui.bootstrap'));
-  beforeEach(function () {
-      inject(function ($q) {
-        deferred = $q.defer();
-      });
-    }); 
-  beforeEach(inject(function($controller, _authenticationService_, $location) {
+  beforeEach(inject(function($controller, _authenticationService_, $location, $q) {
     authenticationService = _authenticationService_
+    deferred = $q.defer();
     spyOn(authenticationService, 'login').and.returnValue(deferred.promise);
     email = "email@test.com"
     password = "password"
