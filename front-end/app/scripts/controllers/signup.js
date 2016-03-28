@@ -20,6 +20,7 @@ angular.module('fairMuseApp')
       };
 
       var error = function(response) {
+
         flash('Sign up failed!');
      };
 });

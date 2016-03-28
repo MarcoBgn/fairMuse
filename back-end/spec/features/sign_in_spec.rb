@@ -1,4 +1,8 @@
 feature 'Sign in' do
+  before do
+    User.create(email:'admin@gmail.com', password: '12345678')
+  en
+
   scenario "allows a user to sign in", js: true do
     visit 'http://localhost:9000/'
     click_link('Log in')
