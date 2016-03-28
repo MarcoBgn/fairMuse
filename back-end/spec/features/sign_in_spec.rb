@@ -22,6 +22,4 @@ feature 'Sign in' do
     click_button('Log in')
     expect(page).to_not have_content('Log out')
   end
-
-
 end
