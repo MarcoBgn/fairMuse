@@ -24,8 +24,7 @@ describe('Controller: LoginCtrl', function () {
 
     it('calls a service', function(){
       LoginCtrl.sendForm(email, password)
-      deferred.promise.then(function (success) {
-          
+      deferred.promise.then(function (success) {  
         expect(success()).toHaveBeenCalled();
         expect(location.path()).toEqual('/songs')
       })
@@ -33,8 +32,7 @@ describe('Controller: LoginCtrl', function () {
     
     it('stores an auth token when the login request is successful', function () {
       LoginCtrl.sendForm(email, password)
-      deferred.promise.then(function (success) {
-          
+      deferred.promise.then(function (success) {  
         success(response);
         expect(localStoage.auth_token).toEqual('testToken');
       })
