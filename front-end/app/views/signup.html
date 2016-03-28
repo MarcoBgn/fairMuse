@@ -4,10 +4,10 @@
 </div>
 <form name="signup_form" ng-submit="signup.sendForm(email, password, password_confirmation)">
 <label for="email">Email</label>
-<input type="email" name="email" ng-model="login.email">
+<input type="email" name="email" ng-model="signup.email">
 <label for="password">Password</label>
 <input type="password" name="password" ng-model="signup.password">
-<label for="password_confirmation">Password</label>
+<label for="password_confirmation">Password Confirmation</label>
 <input type="password" name="password_confirmation" ng-model="signup.password_confirmation">
 <button type="submit">Sign up</button>
 </form>
