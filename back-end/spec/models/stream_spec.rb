@@ -14,4 +14,8 @@ RSpec.describe Stream, type: :model do
   it 'has a total plays column' do
     expect(@stream.total_plays).to eq 1
   end
+  
+  it 'has a weekly plays column' do
+    expect(@stream.weekly_plays).to eq 1
+  end
 end
