@@ -18,10 +18,11 @@
           <li class="active"><a href="#/" >Home</a></li>
           <li><a ng-href="#/about">About</a></li>
           <li><a ng-href="#/artist">Artists</a></li>
+          <li><a ng-href="#/artistsignin">Artist Sign In</a></li>
           <li><a ng-href="#/songs">Songs</a></li>
           <li ng-show='!index.LoggedIn'><a ng-href="#/signup">Sign up</a></li>
           <li ng-show='!index.LoggedIn'><a ng-href="#/login">Log in</a></li>
-          <li ng-show='index.LoggedIn'><a id='log_out' ng-click="index.LogOut()">Log out</a></li>
+          <li ng-show='index.LoggedIn'><a id='log_out' ng-click="index.LogOut()">Log out</a><p> OR </p> <a id='artist_log_out' ng-click="index.LogOut()">Artist log out</a></li>
         </ul>
       </div>
     </div>

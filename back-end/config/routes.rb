@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   devise_for :users, skip: [:sessions, :registrations]
   as :user do
+    post '/api/artistlogin' => 'artistsessions#create'
+    delete '/api/artistlogout' => 'artistsessions#destroy'
     post '/api/artistsignup' => 'artistreg#create'
     post '/api/signup' => 'registrations#create'
     post '/api/login' => 'sessions#create'

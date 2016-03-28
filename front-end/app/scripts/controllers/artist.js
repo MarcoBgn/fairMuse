@@ -6,7 +6,7 @@ angular.module('fairMuseApp')
     var location;
     location = $location
 
-    self.sendForm = function(email, password) {
+    self.sendSignUpForm = function(email, password) {
        self.artistInfo = {email: self.email,
                     password: self.password,
                     password_confirmation: self.password_confirmation}
