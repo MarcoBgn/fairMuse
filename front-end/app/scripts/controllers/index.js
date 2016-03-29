@@ -11,5 +11,12 @@
         localStorage.removeItem("auth_token");
         $location.path("/login");
       });
+      this.artistLogout = function(){
+        var promise = authenticationService.artistLogout();
+        promise.then(function(){
+          localStorage.removeItem("auth_token");
+          $location.path("/login")
+        });
+      }
     };
   });

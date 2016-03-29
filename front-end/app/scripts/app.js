@@ -44,6 +44,16 @@ var fairMuse = angular
     controller: 'MainCtrl',
     controllerAs: 'main'
   })
+  .when('/artist',{
+    templateUrl: 'views/artist.html',
+    controller: 'ArtistCtrl',
+    controllerAs: 'artist'
+  })
+  .when('/artistsignin',{
+    templateUrl: 'views/artistsignin.html',
+    controller: 'ArtistSigninCtrl',
+    controllerAs: 'artist'
+  })
   .when('/about', {
     templateUrl: 'views/about.html',
     controller: 'AboutCtrl',

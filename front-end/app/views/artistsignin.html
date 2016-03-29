@@ -1,0 +1,11 @@
+<div ng-include="'views/navbar.html'"></div>
+<div>
+<flash:messages>
+</div>
+<form name="login_form" ng-submit="artist.sendForm(email, password)">
+<label for="email">Email</label>
+<input type="email" name="email" ng-model="artist.email">
+<label for="password">Password</label>
+<input type="password" name="password" ng-model="artist.password">
+<button type="submit">Log in</button>
+</form>

@@ -10,6 +10,7 @@ angular.module('fairMuseApp')
       self.userInfo = {email: self.email,
                        password: self.password,
                        password_confirmation: self.password_confirmation};
+
       var promise = signupService.signup(self.userInfo);
       promise.then(success, error);
     };
