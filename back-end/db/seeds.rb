@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(email:'admin@gmail.com', password: '12345678')
+Track.create(name: "default", genre: "Rock", file: "")
+Track.create(name: "Yan-Yi's song", genre: "Electro", file: "")

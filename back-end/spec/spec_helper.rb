@@ -9,7 +9,7 @@ RSpec.configure do |config|
   config.include ActionDispatch::TestProcess
   
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:transaction)
+    DatabaseCleaner[:active_record, { connection: :one }].clean_with(:transaction)
   end
 
   config.before(:each) do
