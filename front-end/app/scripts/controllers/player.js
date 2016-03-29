@@ -1,8 +1,17 @@
 'use strict';
 
 fairMuse.controller('PlayerCtrl',
-  ["$sce", "streamTrackingService", function ($sce, streamTrackingService) {
-    var streamTrackingService;
+  ["$sce", "streamTrackingService","tracksListService", function ($sce, streamTrackingService, tracksListService) {
+   var self = this
+    var streamTrackingService, tracksListService, data, tracks, $scope;
+    
+    var promise = tracksListService.getList()
+
+    self.tracks = promise.then(function(response){
+    console.log(response.data)
+    });
+
+    
     this.songList = [
       {
         songId: 1,
