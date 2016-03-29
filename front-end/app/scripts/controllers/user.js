@@ -2,14 +2,15 @@
 
   fairMuse.controller('UserCtrl', function ($http) {
     $http.get('http://localhost:3000/users');
-    var self = this
-    var promise = self.getPlayDetails()
+    var self = this;
+    // var promise = self.getPlayDetails()
 
     self.getPlayDetails = function(){
-      $http.post('http://localhost:3000/streams', {user_id: localStorage.getItem('user_id')})
+      return $http.post('http://localhost:3000//api/streaminfo', {user_id: localStorage.getItem('user_id')})
   };
 
   var success = function(response){
+    console.log(response.data);
   this.playRecord = response.data;
   };
 
