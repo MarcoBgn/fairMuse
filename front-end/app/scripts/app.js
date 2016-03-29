@@ -30,7 +30,7 @@ var fairMuse = angular
       }
       return $q.reject(response);
     }
-  }
+  };
 })
 
 .config(function($httpProvider) {

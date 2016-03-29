@@ -1,5 +1,6 @@
-angular.module('fairMuseApp').service('signupService', function($http, $location){
-  var location = $location
+'use strict';
+
+angular.module('fairMuseApp').service('signupService', function($http){
     this.signup= function(user) {
     return $http.post("http://localhost:3000/api/signup", user);
     };
