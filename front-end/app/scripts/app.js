@@ -21,7 +21,7 @@ var fairMuse = angular
       config.headers = config.headers || {};
       if(localStorage.auth_token) {
         config.headers.token = localStorage.auth_token;
-      } 
+      }
       return config;
     },
     responseError: function(response) {
@@ -30,7 +30,7 @@ var fairMuse = angular
       }
       return $q.reject(response);
     }
-  }
+  };
 })
 
 .config(function($httpProvider) {
@@ -58,6 +58,11 @@ var fairMuse = angular
     templateUrl: 'views/songs.html',
     controller: 'MainCtrl',
     controllerAs: 'main'
+  })
+  .when('/signup', {
+    templateUrl: 'views/signup.html',
+    controller: 'SignupCtrl',
+    controllerAs: 'signup'
   })
   .when('/login', {
     templateUrl: 'views/login.html',
