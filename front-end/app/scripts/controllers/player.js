@@ -2,26 +2,17 @@
 
 fairMuse.controller('PlayerCtrl',
   ["$sce", "streamTrackingService","TracksFactory", function ($sce, streamTrackingService, TracksFactory) {
-   var self = this, tracks
+   var self = this, tracks, songList
 
-    var streamTrackingService, tracksListService;
+    var streamTrackingService;
     
-    // this.tracks = TracksFactory.query(function(){
-    // console.log(tracks);
-    // });
+    this.tracks = TracksFactory.query(function(){
+    console.log(tracks);
 
-      self.tracks = [];
-
-      TracksFactory.load(function(data) {
-      self.tracks = data;
-      }); 
-
-    console.log(self.tracks)
-
-    this.songList = [
+     self.songList = [
       {
         songId: 1,
-        name: "default song",
+        name: self.tracks[0].name,
         sources: [
           {
             src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/audios/videogular.mp3"),
@@ -29,38 +20,16 @@ fairMuse.controller('PlayerCtrl',
             name: "default song"
           }
         ]
-      },
-      {
-        songId: 2,
-        name: "Yan-Yi's song",
-        sources: [
-          {
-            src: $sce.trustAsResourceUrl("http://s3-eu-west-1.amazonaws.com/fairmusetracks.bucket/tracks/files/000/000/001/original/testsong.mp3?1458920645"),
-            type: "audio/mpeg",
-            name: "Yan-Yi's song"
-          }
-        ]
-      },
-      {
-        songId: 3,
-        name: "Another Track",
-        sources: [
-          {
-            src: $sce.trustAsResourceUrl("http://s3-eu-west-1.amazonaws.com/fairmusetracks.bucket/tracks/files/000/000/002/original/Modern_World_%28Anouk_Cover%29.mp3?1458922573"),
-            type: "audio/mpeg",
-            name: "Another Track"
-          }
-        ]
       }
     ];
 
-    this.config = {
+    self.config = {
       theme: {
          url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"
       }
     };
 
-    this.getSong = function(id) {
+    self.getSong = function(id) {
      for(var i = 0; i < this.songList.length; i++) {
        if(this.songList[i].songId === id) {
          return this.songList[i].sources;
@@ -68,14 +37,16 @@ fairMuse.controller('PlayerCtrl',
      }
     };
 
-    this.changeSource = function(id){
+    self.changeSource = function(id){
       this.config.sources = this.getSong(id);
       streamTrackingService.track(id);
     };
-    this.currentSongName = function(){
+    self.currentSongName = function(){
       if (this.config.sources) {
         return this.config.sources[0].name;
       }
     };
+
+    });
   }]
 );
