@@ -5,5 +5,9 @@ class Track < ActiveRecord::Base
   content_type: { content_type: /\Aaudio\/.*\Z/}, 
   size: { in: 0..10.megabytes }
   
+  def track_url
+    file.url
+  end
+  
   has_many :streams, dependent: :destroy
 end

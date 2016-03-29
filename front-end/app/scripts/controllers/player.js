@@ -7,21 +7,24 @@ fairMuse.controller('PlayerCtrl',
     var streamTrackingService;
     
     this.tracks = TracksFactory.query(function(){
-    console.log(tracks);
-
-     self.songList = [
-      {
-        songId: 1,
-        name: self.tracks[0].name,
-        sources: [
-          {
-            src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/audios/videogular.mp3"),
-            type: "audio/mpeg",
-            name: "default song"
-          }
-        ]
+     
+      self.songList = []
+      for (var i = 0; i <= self.tracks.length -1; i++) {
+      
+         self.songList.push({
+           songId: i+1,
+           name: self.tracks[i].name,
+           genre: self.tracks[i].genre,
+           sources: [
+             {
+               src: $sce.trustAsResourceUrl(self.tracks[i].track_url),
+               type: self.tracks[i].file_content_type,
+               name: self.tracks[i].name
+             }
+           ]
+         })
       }
-    ];
+     
 
     self.config = {
       theme: {
