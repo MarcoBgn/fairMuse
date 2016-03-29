@@ -24,8 +24,6 @@ gem 'aws-sdk', '< 2.0'
 
 gem 'jbuilder'
 
-gem 'rails_12factor'
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
