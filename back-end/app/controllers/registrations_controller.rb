@@ -1,12 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
-    user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
-    if user
+    user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+    if user.save
       token = user.ensure_authentication_token
       render json: {auth_token: token}
     else
-      render nothing: true, status: 422
+      # warden.custom_failure!
+      render json: {messages: user.errors.full_messages}, status: 422
     end
   end
 

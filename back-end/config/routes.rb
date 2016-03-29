@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :charges
   resources :tracks
   resources :users, only: [:index]
-  devise_for :users, skip: [:sessions, :registrations]
+  resources :streams, only: [:create]
+  devise_for :users, skip: [ :sessions, :registrations ]
+
   as :user do
     post '/api/artistlogin' => 'artistsessions#create'
     delete '/api/artistlogout' => 'artistsessions#destroy'

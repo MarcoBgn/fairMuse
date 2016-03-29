@@ -5,7 +5,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
-require "paperclip/matchers"
+require 'paperclip/matchers'
+require 'database_cleaner'
 
 ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|

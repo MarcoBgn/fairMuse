@@ -2,25 +2,25 @@
 
 angular.module('fairMuseApp')
   .controller('LoginCtrl', function(authenticationService, flash, $location) {
-  	var self = this
+    var self = this;
     var user, email, password, authenticationService, response, location;
-		location = $location
-		self.email = "";
+    location = $location;
+    self.email = "";
     self.password = "";
-  
- 		self.sendForm = function(email, password) {
+
+    self.sendForm = function(email, password) {
        self.user = {email: self.email,
-                    password: self.password}
- 		   var promise = authenticationService.login(self.user);
- 		  promise.then(success, error); 
+                    password: self.password};
+       var promise = authenticationService.login(self.user);
+      promise.then(success, error);
     };
- 		  
- 		  var success = function(response){
- 		  localStorage.setItem('auth_token', response.data.auth_token);
- 		  location.path('/songs')
- 		  };
- 		  
- 		  var error = function(response) {
-  		  flash('Wrong Login Credentials!');
+
+      var success = function(response){
+      localStorage.setItem('auth_token', response.data.auth_token);
+      location.path('/songs');
+      };
+
+      var error = function(response) {
+        flash('error', 'Wrong Login Credentials!');
      };
 });

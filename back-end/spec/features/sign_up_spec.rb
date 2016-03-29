@@ -19,6 +19,6 @@ feature 'Sign up' do
     fill_in 'password', with: '12345678'
     fill_in 'password_confirmation', with: '12345678'
     click_button('Sign up')
-    expect(page).to have_content('Sign up failed!')
+    expect(page).to have_content('Email has already been taken')
   end
 end
