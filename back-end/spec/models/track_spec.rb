@@ -18,6 +18,8 @@ RSpec.describe Track, type: :model do
   end
   
   context "Model:" do
+  
+    it { is_expected.to have_many :streams }
                 
     it 'has a name' do
       expect(@track.name).to eq "Song1"

@@ -1,7 +1,8 @@
 'use strict';
 
 fairMuse.controller('PlayerCtrl',
-  ["$sce", function ($sce) {
+  ["$sce", "streamTrackingService", function ($sce, streamTrackingService) {
+    var streamTrackingService;
     this.songList = [
       {
         songId: 1,
@@ -54,6 +55,7 @@ fairMuse.controller('PlayerCtrl',
 
     this.changeSource = function(id){
       this.config.sources = this.getSong(id);
+      streamTrackingService.track(id);
     };
     this.currentSongName = function(){
       if (this.config.sources) {
