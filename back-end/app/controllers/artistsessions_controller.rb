@@ -5,7 +5,7 @@ class ArtistsessionsController < Devise::SessionsController
     artist = Artist.find_for_database_authentication(email: params[:email])
     if artist && artist.valid_password?(params[:password])
       token = artist.ensure_authentication_token
-      render json: {auth_token: token, artist_id: artist.id, type: "artist"}
+      render json: {auth_token: token, artist_id: artist.id, is_artist: true}
     else
       render nothing: true, status: :unauthorized
     end

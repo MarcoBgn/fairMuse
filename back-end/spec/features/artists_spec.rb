@@ -37,6 +37,14 @@ feature 'artists can sign up' do
     expect(page).to have_content('Log out')
   end
 
+  scenario "a link to artist account is displayed after signing in", js: true do
+    visit 'http://localhost:9000/'
+    artist_log_in
+    click_link("Account")
+    expect(page).to have_content("Artist Account")
+
+  end
+
   scenario 'an artist can sign out', js: true do
     visit 'http://localhost:9000/'
     find(:css, "#artist_log_out").click

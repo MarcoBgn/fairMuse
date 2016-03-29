@@ -26,4 +26,11 @@ feature 'Sign in' do
     click_button('Log in')
     expect(page).to_not have_content('Log out')
   end
+  scenario "link to user account page is displayed when logged in", js: true do
+    visit 'http://localhost:9000/'
+    log_in
+    click_link('Account')
+    expect(page).to have_content('User Account')
+
+  end
 end

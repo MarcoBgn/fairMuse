@@ -16,9 +16,10 @@ angular.module('fairMuseApp')
     };
 
       var success = function(response){
+        console.log(response.data)
       localStorage.setItem('auth_token', response.data.auth_token);
       localStorage.setItem('user_id', response.data.user_id);
-      localStorage.setItem('type', response.data.type);
+      localStorage.setItem('is_user', response.data.is_user);
       location.path('/songs');
       };
 
