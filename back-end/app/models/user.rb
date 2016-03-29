@@ -17,5 +17,5 @@ class User < ActiveRecord::Base
    end
  end
  
- has_many :streams
+ has_many :streams, dependent: :destroy
 end
