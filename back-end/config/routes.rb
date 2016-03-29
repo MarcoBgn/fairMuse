@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :tracks
   resources :users, only: [:index]
   resources :streams, only: [:create]
-  devise_for :users, skip: [ :sessions, :registrations ]
+  devise_for :users, skip: [:sessions, :registrations]
 
   as :user do
     post '/api/streaminfo' => 'streams#get_user_stream_info'
