@@ -1,17 +1,23 @@
 'use strict';
 
 fairMuse.controller('PlayerCtrl',
-  ["$sce", "streamTrackingService","tracksListService", function ($sce, streamTrackingService, tracksListService) {
-   var self = this
-    var streamTrackingService, tracksListService, data, tracks, $scope;
-    
-    var promise = tracksListService.getList()
+  ["$sce", "streamTrackingService","TracksFactory", function ($sce, streamTrackingService, TracksFactory) {
+   var self = this, tracks
 
-    self.tracks = promise.then(function(response){
-    console.log(response.data)
-    });
-
+    var streamTrackingService, tracksListService;
     
+    // this.tracks = TracksFactory.query(function(){
+    // console.log(tracks);
+    // });
+
+      self.tracks = [];
+
+      TracksFactory.load(function(data) {
+      self.tracks = data;
+      }); 
+
+    console.log(self.tracks)
+
     this.songList = [
       {
         songId: 1,
