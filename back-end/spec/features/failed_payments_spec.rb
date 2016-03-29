@@ -1,5 +1,5 @@
 feature 'the payment is not successful' do
-  
+
   scenario 'card is declined', js: true do
     visit 'http://localhost:9000/'
     click_link 'About'
