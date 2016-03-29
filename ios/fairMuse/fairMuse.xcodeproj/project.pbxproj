@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E7FCCDC91CA98C2E00A25FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCCDC81CA98C2E00A25FEC /* AppDelegate.swift */; };
-		E7FCCDCB1CA98C2E00A25FEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCCDCA1CA98C2E00A25FEC /* ViewController.swift */; };
 		E7FCCDCE1CA98C2E00A25FEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FCCDCC1CA98C2E00A25FEC /* Main.storyboard */; };
 		E7FCCDD11CA98C2E00A25FEC /* fairMuse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7FCCDCF1CA98C2E00A25FEC /* fairMuse.xcdatamodeld */; };
 		E7FCCDD31CA98C2E00A25FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FCCDD21CA98C2E00A25FEC /* Assets.xcassets */; };
 		E7FCCDD61CA98C2E00A25FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FCCDD41CA98C2E00A25FEC /* LaunchScreen.storyboard */; };
 		E7FCCDE11CA98C2F00A25FEC /* fairMuseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCCDE01CA98C2F00A25FEC /* fairMuseTests.swift */; };
 		E7FCCDEC1CA98C2F00A25FEC /* fairMuseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCCDEB1CA98C2F00A25FEC /* fairMuseUITests.swift */; };
-		E7FCCDFA1CA99EB300A25FEC /* ArtistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCCDF91CA99EB300A25FEC /* ArtistsTableViewController.swift */; };
-		E7FCCE041CA9A20500A25FEC /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCCE031CA9A20500A25FEC /* TitleViewController.swift */; };
-		E7FCCE061CA9A26500A25FEC /* SongsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCCE051CA9A26500A25FEC /* SongsTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +36,6 @@
 /* Begin PBXFileReference section */
 		E7FCCDC51CA98C2E00A25FEC /* fairMuse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fairMuse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FCCDC81CA98C2E00A25FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7FCCDCA1CA98C2E00A25FEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7FCCDCD1CA98C2E00A25FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7FCCDD01CA98C2E00A25FEC /* fairMuse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fairMuse.xcdatamodel; sourceTree = "<group>"; };
 		E7FCCDD21CA98C2E00A25FEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,9 +47,6 @@
 		E7FCCDE71CA98C2F00A25FEC /* fairMuseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fairMuseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FCCDEB1CA98C2F00A25FEC /* fairMuseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fairMuseUITests.swift; sourceTree = "<group>"; };
 		E7FCCDED1CA98C2F00A25FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7FCCDF91CA99EB300A25FEC /* ArtistsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsTableViewController.swift; sourceTree = "<group>"; };
-		E7FCCE031CA9A20500A25FEC /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
-		E7FCCE051CA9A26500A25FEC /* SongsTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,15 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				E7FCCDC81CA98C2E00A25FEC /* AppDelegate.swift */,
-				E7FCCDCA1CA98C2E00A25FEC /* ViewController.swift */,
 				E7FCCDCC1CA98C2E00A25FEC /* Main.storyboard */,
 				E7FCCDD21CA98C2E00A25FEC /* Assets.xcassets */,
 				E7FCCDD41CA98C2E00A25FEC /* LaunchScreen.storyboard */,
 				E7FCCDD71CA98C2E00A25FEC /* Info.plist */,
 				E7FCCDCF1CA98C2E00A25FEC /* fairMuse.xcdatamodeld */,
-				E7FCCDF91CA99EB300A25FEC /* ArtistsTableViewController.swift */,
-				E7FCCE031CA9A20500A25FEC /* TitleViewController.swift */,
-				E7FCCE051CA9A26500A25FEC /* SongsTableTableViewController.swift */,
 			);
 			path = fairMuse;
 			sourceTree = "<group>";
@@ -268,12 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7FCCDFA1CA99EB300A25FEC /* ArtistsTableViewController.swift in Sources */,
-				E7FCCDCB1CA98C2E00A25FEC /* ViewController.swift in Sources */,
 				E7FCCDC91CA98C2E00A25FEC /* AppDelegate.swift in Sources */,
-				E7FCCE061CA9A26500A25FEC /* SongsTableTableViewController.swift in Sources */,
 				E7FCCDD11CA98C2E00A25FEC /* fairMuse.xcdatamodeld in Sources */,
-				E7FCCE041CA9A20500A25FEC /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
