@@ -2,7 +2,7 @@ ENV['RAILS_ENV']='development'
 
 feature 'Tracks the number of plays a song has' do
 
-  scenario 'Logged in user plays a song already streamed', js: true do
+  scenario 'Logged in user can play a song thats already streamed', js: true do
     visit 'http://localhost:9000/'
     log_in
     expect{click_button('Play Yan-Yi\'s song')}.not_to change(Stream, :count)

@@ -1,3 +1,5 @@
+ENV['RAILS_ENV']='development'
+
 feature 'Play Uploaded Music' do
 	scenario 'User uploads and plays uploaded track', js: true do
 		visit 'http://localhost:9000/#/account'
