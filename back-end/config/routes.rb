@@ -14,8 +14,11 @@ Rails.application.routes.draw do
     post '/api/signup' => 'registrations#create'
     post '/api/login' => 'sessions#create'
     delete '/api/logout' => 'sessions#destroy'
+    post '/api/balanceinfo' => 'artists#get_balance'
   end
+
   post '/api/streaminfo' => 'streams#get_user_stream_info'
+
 
   match '*any' => 'application#options', :via => [:options]
 end

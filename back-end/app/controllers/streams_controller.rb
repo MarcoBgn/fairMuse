@@ -3,9 +3,6 @@ class StreamsController < ApplicationController
   FIRST_PLAY=1
 
   def create
-    p "+++++++++++++++++++"
-    p params[:user_id]
-    p "+++++++++++++userid"
     user_id = params[:user_id] ? params[:user_id] : 1000
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
     if stream

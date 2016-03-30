@@ -10,7 +10,7 @@
         };
 
     self.getStreamDetails = function(){
-      return $http.post('http://localhost:3000//api/streaminfo', {user_id: localStorage.getItem('user_id')})
+      return $http.post('http://localhost:3000/api/streaminfo', {user_id: localStorage.getItem('user_id')})
   };
 
   var success = function(response){
