@@ -4,7 +4,7 @@ class StreamsController < ApplicationController
 
   def create
     
-    stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
+    stream = Stream.find_by(track_id: params[:track_id], user_id: params[:user_id])
     
     if stream
       stream.update(total_plays: total_count(user_id), weekly_plays: weekly_count(user_id))
@@ -19,7 +19,7 @@ class StreamsController < ApplicationController
   end
 
   def get_user_stream_info
-    stream_info = Stream.where(user_id: params[:user_id]).map do |stream|
+    stream_info = Stream.where(user_id: user_id).map do |stream|
       {track_id: stream.track_id, total_plays: stream.total_plays}
     end
     render json: stream_info
@@ -38,6 +38,6 @@ class StreamsController < ApplicationController
   end
 
   def user_id
-  current_user ? current_user.id : 0  
+  params[:user_id] ? params[:user_id] : 0  
   end 
 end
