@@ -1,13 +1,11 @@
 'use strict';
 
 fairMuse.controller('PlayerCtrl',
-  ["$sce", "streamTrackingService","TracksFactory", function ($sce, streamTrackingService, TracksFactory) {
+  ["$sce", "streamTrackingService","TracksService", function ($sce, streamTrackingService, TracksService) {
    var self = this, tracks, songList
 
-    console.log(self.tracks[0].name)
-
     var streamTrackingService;
-    this.tracks = TracksFactory.query(function(){
+    this.tracks = TracksService.query(function(){
       self.songList = []
       for (var i = 0; i <= self.tracks.length -1; i++) {
       
