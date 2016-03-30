@@ -32,4 +32,6 @@ class PaymentsController < ApplicationController
     user.balance ? user.balance : 0
   end
 
+
+
 end

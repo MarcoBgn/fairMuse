@@ -17,4 +17,9 @@ class SessionsController < Devise::SessionsController
     current_user.save
     render json: {message: 'message' }
   end
+
+  def session_user
+    session[:user] = current_user
+  end
+
 end
