@@ -13,6 +13,7 @@ fairMuse.controller('PlayerCtrl',
            songId: i+1,
            name: self.tracks[i].name,
            genre: self.tracks[i].genre,
+           artist_id: self.tracks[i].artist_id,
            sources: [
              {
                src: $sce.trustAsResourceUrl(self.tracks[i].track_url),

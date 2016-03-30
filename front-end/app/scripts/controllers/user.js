@@ -5,7 +5,7 @@
     var self = this;
 
     self.pay = function(){
-      $http.post('http://localhost:3000/api/payment', {user_id: localStorage.getItem('user_id') })
+      $http.post('http://localhost:3000/api/payment', {user_id: localStorage.getItem('user_id')})
     }
 
     self.displayStreamDetails = function(){

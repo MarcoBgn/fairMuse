@@ -39,6 +39,6 @@ class TracksController < ApplicationController
     end
 
     def track_params
-      params.require(:track).permit(:name, :genre, :file)
+      params.require(:track).permit(:name, :genre, :file, :artist_id)
     end
 end
