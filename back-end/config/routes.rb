@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   post '/api/streaminfo' => 'streams#get_user_stream_info'
-
+  post '/api/payment' => 'payments#pay'
 
   match '*any' => 'application#options', :via => [:options]
 end

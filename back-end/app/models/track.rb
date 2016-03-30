@@ -4,6 +4,6 @@ class Track < ActiveRecord::Base
   # validates_attachment :file, presence: true,
   # content_type: { content_type: /\Aaudio\/.*\Z/},
   # size: { in: 0..10.megabytes }
-
+  belongs_to :artist
   has_many :streams
 end
