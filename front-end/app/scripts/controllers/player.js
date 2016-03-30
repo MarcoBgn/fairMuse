@@ -2,9 +2,9 @@
 
 fairMuse.controller('PlayerCtrl',
   ["$sce", "streamTrackingService","TracksService", function ($sce, streamTrackingService, TracksService) {
-   var self = this, tracks, songList
-
-    var streamTrackingService;
+   var self = this
+   var streamTrackingService;
+    
     this.tracks = TracksService.query(function(){
       self.songList = []
       for (var i = 0; i <= self.tracks.length -1; i++) {
@@ -23,7 +23,6 @@ fairMuse.controller('PlayerCtrl',
          })
       }
      
-
     self.config = {
       theme: {
          url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"
