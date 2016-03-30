@@ -10,6 +10,7 @@
       <input type="text" name="genre" ng-model="upload.genre" placeholder="What is your sound?" size="24">
       <br>File:
       <input type="file" ngf-select ng-model="audioFile" name="file" accept="audio/*" ngf-max-size="9MB" required ngf-model-invalid="errorFile">
+      <input type="file" ngf-select ng-model="picFile" name="picfile" accept="image/*" ngf-max-size="1MB" ngf-model-invalid="errorFile">
       <i ng-show="fileUploadForm.file.$error.required">*required</i>
       <br>
       <i ng-show="fileUploadForm.file.$error.maxSize">File too large
