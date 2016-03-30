@@ -4,6 +4,9 @@ def log_in(email='admin@gmail.com', password='12345678')
   fill_in 'email', with: email
   fill_in 'password', with: password
   click_button('Log in')
+<<<<<<< HEAD
+end
+=======
 end
 
 def artist_log_in(email='name@email.com', password='12345678')
@@ -12,3 +15,4 @@ def artist_log_in(email='name@email.com', password='12345678')
   fill_in 'password', with: password
   click_button('Log in')
 end
+>>>>>>> master

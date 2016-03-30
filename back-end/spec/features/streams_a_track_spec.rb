@@ -1,10 +1,10 @@
+ENV['RAILS_ENV']='development'
+
 feature 'Tracks the number of plays a song has' do
 
-#defering feature tests until after implemnetation of user story 10: play uploaded music.
-
-  scenario 'Logged in user plays a song already streamed', js: true do
+  scenario 'Logged in user can play a song thats already streamed', js: true do
+    visit 'http://localhost:9000/'
     Track.create(name: "Song1", genre: "Electro", artist_id: 1)
-    visit 'http://localhost:9000/#/songs'
     log_in
     click_button('Play Yan-Yi\'s song')
     expect{click_button('Play Yan-Yi\'s song')}.not_to change(Stream, :count)

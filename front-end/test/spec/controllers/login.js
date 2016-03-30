@@ -6,13 +6,9 @@ describe('Controller: LoginCtrl', function () {
 
   beforeEach(module('fairMuseApp'));
   beforeEach(module('ui.bootstrap'));
-  beforeEach(function () {
-      inject(function ($q) {
-        deferred = $q.defer();
-      });
-    }); 
-  beforeEach(inject(function($controller, _authenticationService_, $location) {
+  beforeEach(inject(function($controller, _authenticationService_, $location, $q) {
     authenticationService = _authenticationService_
+    deferred = $q.defer();
     spyOn(authenticationService, 'login').and.returnValue(deferred.promise);
     email = "email@test.com"
     password = "password"
@@ -24,8 +20,7 @@ describe('Controller: LoginCtrl', function () {
 
     it('calls a service', function(){
       LoginCtrl.sendForm(email, password)
-      deferred.promise.then(function (success) {
-          
+      deferred.promise.then(function (success) {  
         expect(success()).toHaveBeenCalled();
         expect(location.path()).toEqual('/songs')
       })
@@ -33,8 +28,7 @@ describe('Controller: LoginCtrl', function () {
     
     it('stores an auth token when the login request is successful', function () {
       LoginCtrl.sendForm(email, password)
-      deferred.promise.then(function (success) {
-          
+      deferred.promise.then(function (success) {  
         success(response);
         expect(localStoage.auth_token).toEqual('testToken');
       })

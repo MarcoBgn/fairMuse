@@ -2,9 +2,9 @@ describe('Service: authenticationService', function(){
   var location,params,httpBackend,authenticationService, localStorage, $window, token;
 
   beforeEach(function(){
-      
-      module('fairMuseApp');
-      module('ui.bootstrap');
+    
+    module('fairMuseApp');
+    module('ui.bootstrap');
 
     inject(function(_$httpBackend_, $location, _authenticationService_, _$window_){
       httpBackend = _$httpBackend_;
@@ -25,15 +25,15 @@ describe('Service: authenticationService', function(){
     expect(httpBackend.flush).not.toThrow();    
   });
 
-   it('has a logout function that sends a delete to the backend', function(){
+  it('has a logout function that sends a delete to the backend', function(){
     httpBackend.flush()
     authenticationService.LogOut()
     expect(httpBackend.flush).not.toThrow();    
   });
 
-     it('checks to see if a user is logged in', function() {
+  it('checks to see if a user is logged in', function() {
    expect(authenticationService.isLoggedIn()).toEqual(true) 
-   });
+ });
 
 });
 

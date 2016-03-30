@@ -3,16 +3,17 @@ class StreamsController < ApplicationController
   FIRST_PLAY=1
 
   def create
-    user_id = params[:user_id] ? params[:user_id] : 0
+    
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
+    
     if stream
       stream.update(total_plays: total_count(user_id), weekly_plays: weekly_count(user_id))
       stream.save
     else
       Stream.create(track_id: params[:track_id],
-      user_id: user_id,
-      total_plays: FIRST_PLAY,
-      weekly_plays: FIRST_PLAY)
+        user_id: user_id,
+        total_plays: FIRST_PLAY,
+        weekly_plays: FIRST_PLAY)
     end
     render json:{}, status: :ok
   end
@@ -35,4 +36,8 @@ class StreamsController < ApplicationController
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
     stream.weekly_plays + 1
   end
+
+  def user_id
+  current_user ? current_user.id : 0  
+  end 
 end
