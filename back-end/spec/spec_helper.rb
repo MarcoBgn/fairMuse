@@ -2,6 +2,9 @@ require "rails_helper"
 require "payments_helper"
 require "upload_helper"
 require "login_helper"
+require 'coveralls'
+
+Coveralls.wear!
 
 Capybara.default_driver = :rack_test
 RSpec.configure do |config|

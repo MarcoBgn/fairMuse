@@ -3,8 +3,11 @@
 angular.module('fairMuseApp')
   .controller('ArtistCtrl', function(signupService, flash, $location, $http) {
     var self = this
+    var artistId;
     var location;
     location = $location
+    
+    this.artistId = localStorage.getItem('artist_id')
 
     self.sendSignUpForm = function(email, password) {
        self.artistInfo = {email: self.email,
@@ -18,7 +21,7 @@ angular.module('fairMuseApp')
       localStorage.setItem('auth_token', response.data.auth_token);
       localStorage.setItem('artist_id', response.data.artist_id);
       localStorage.setItem('is_artist', response.data.is_artist);
-      location.path('/songs')
+      location.path('/artistaccount')
       };
 
       var error = function(response) {

@@ -2,11 +2,13 @@
 
 angular.module('fairMuseApp')
   .controller('MainCtrl', function() {
+
     this.awesomeTeam = [
       'Russel',
       'Mark',
       'Yan-yi',
-      'Marco'
+      'Marco',
+      'David'
     ];
      this.user = localStorage.getItem('user_id')
   });

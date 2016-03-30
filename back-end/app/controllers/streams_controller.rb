@@ -3,9 +3,8 @@ class StreamsController < ApplicationController
   FIRST_PLAY=1
 
   def create
-    
-    stream = Stream.find_by(track_id: params[:track_id], user_id: params[:user_id])
-    
+    stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
+
     if stream
       stream.update(total_plays: total_count(user_id), weekly_plays: weekly_count(user_id))
       stream.save
@@ -38,6 +37,6 @@ class StreamsController < ApplicationController
   end
 
   def user_id
-  params[:user_id] ? params[:user_id] : 0  
-  end 
+    params[:user_id] ? params[:user_id] : 0
+  end
 end
