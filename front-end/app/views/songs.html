@@ -1,4 +1,5 @@
 <div ng-include="'views/navbar.html'"></div>
-<div ng-repeat="song in player.songList">
+<input name="search_bar" type="text" ng-model="query" placeholder="search artist, genre, title...">
+<div ng-repeat="song in player.songList | filter:query">
   {{song.songId}} {{song.name}} <button id={{song.songId}} ng-click="player.changeSource(song.songId)">Play {{song.name}}</button>
 </div>
