@@ -13,8 +13,8 @@ angular.module('fairMuseApp').service('authenticationService', function($http, $
       return $http.delete("http://localhost:3000/api/logout.json");
     };
 
-    this.artistLogin= function(user) {
-    return $http.post("http://localhost:3000/api/artistlogin", user);
+    this.artistLogin= function(artist) {
+    return $http.post("http://localhost:3000/api/artistlogin", artist);
     };
 
     this.artistLogout = function(){

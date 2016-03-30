@@ -10,11 +10,11 @@ feature 'Sign in' do
     fill_in 'password', with: '12345678'
     click_button('Log in')
     expect(page).to have_content('Log out')
+    find(:css, "#log_out").click
   end
 
   scenario 'allows a user to sign out', js: true do
     visit 'http://localhost:9000/'
-    find(:css, "#log_out").click
     expect(page).to_not have_content('Log out')
   end
 
@@ -25,5 +25,12 @@ feature 'Sign in' do
     fill_in 'password', with: '12345678'
     click_button('Log in')
     expect(page).to_not have_content('Log out')
+  end
+  scenario "link to user account page is displayed when logged in", js: true do
+    visit 'http://localhost:9000/'
+    log_in
+    click_link('Account')
+    expect(page).to have_content('User Account')
+    find(:css, "#log_out").click
   end
 end
