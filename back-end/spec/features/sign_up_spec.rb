@@ -1,7 +1,4 @@
 feature 'Sign up' do
-  before do
-    User.create(email:'admin@gmail.com', password: '12345678')
-  end
 
   scenario 'allows a user to sign up', js: true do
     visit 'http://localhost:9000/'
@@ -14,6 +11,7 @@ feature 'Sign up' do
   end
 
   scenario 'does not allow a user to sign up with same email twice', js: true do
+    User.create(email:'admin@gmail.com', password: '12345678')
     visit 'http://localhost:9000/'
     find(:css, "#log_out").click
     click_link('Sign up')

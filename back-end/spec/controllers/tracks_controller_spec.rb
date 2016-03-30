@@ -6,7 +6,7 @@ RSpec.describe TracksController, type: :controller do
     @track = Track.new
   end
   let(:valid_attributes) {
-    {name: "Test", genre: "Rock", file: fixture_file_upload("testsong.mp3", 'audio/mpeg')}
+    {name: "Test", genre: "Rock", file: fixture_file_upload("testsong.mp3", 'audio/mpeg'), artist: "Artist"}
   }
 
   let(:invalid_attributes) {
@@ -23,7 +23,7 @@ RSpec.describe TracksController, type: :controller do
         }.to change(Track, :count).by(1)
       end
     end
-    
+
     context "with invalid params" do
       it "does not create a new Track" do
         expect {

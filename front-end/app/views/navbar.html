@@ -17,10 +17,15 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#/" >Home</a></li>
           <li><a ng-href="#/about">About</a></li>
+          <li><a ng-show="!index.LoggedIn" ng-href="#/artist">Artists</a></li>
+          <li><a ng-show="!index.LoggedIn" ng-href="#/artistsignin">Artist Sign In</a></li>
           <li><a ng-href="#/songs">Songs</a></li>
+          <li ng-show="index.isUser"><a ng-href="#/user">Account</a></li>
+          <li ng-show="index.isArtist"><a ng-href="#/artistaccount">Account</a></li>
           <li ng-show='!index.LoggedIn'><a ng-href="#/signup">Sign up</a></li>
           <li ng-show='!index.LoggedIn'><a ng-href="#/login">Log in</a></li>
-          <li ng-show='index.LoggedIn'><a id='log_out' ng-click="index.LogOut()">Log out</a></li>
+          <li ng-show='index.isUser'><a id='log_out' ng-click="index.LogOut()">Log out</a></li>
+          <li ng-show='index.isArtist'><a id='artist_log_out' ng-click="index.bob()">Log out</a></li>
         </ul>
       </div>
     </div>

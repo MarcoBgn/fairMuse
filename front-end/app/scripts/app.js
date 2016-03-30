@@ -44,6 +44,16 @@ var fairMuse = angular
     controller: 'MainCtrl',
     controllerAs: 'main'
   })
+  .when('/artist',{
+    templateUrl: 'views/artist.html',
+    controller: 'ArtistCtrl',
+    controllerAs: 'artist'
+  })
+  .when('/artistsignin',{
+    templateUrl: 'views/artistsignin.html',
+    controller: 'ArtistSigninCtrl',
+    controllerAs: 'artist'
+  })
   .when('/about', {
     templateUrl: 'views/about.html',
     controller: 'AboutCtrl',
@@ -78,6 +88,11 @@ var fairMuse = angular
     templateUrl: 'views/account.html',
     controller: 'AccountCtrl',
     controllerAs: 'account'
+  })
+  .when('/artistaccount', {
+    templateUrl: 'views/artistaccount.html',
+    controller: 'ArtistCtrl',
+    controllerAs: 'artist'
   })
   .otherwise({
     redirectTo: '/'
