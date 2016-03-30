@@ -19,7 +19,7 @@ angular.module('fairMuseApp')
         localStorage.setItem('auth_token', response.data.auth_token);
         localStorage.setItem('user_id', response.data.user_id);
         localStorage.setItem('is_user', response.data.is_user);
-        location.path('/songs');
+        location.path('/useraccount');
       };
 
       var error = function(response) {

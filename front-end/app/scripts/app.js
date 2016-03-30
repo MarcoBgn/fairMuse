@@ -50,7 +50,7 @@ var fairMuse = angular
     controllerAs: 'artist'
   })
   .when('/artistsignin',{
-    templateUrl: 'views/artistsignin.html',
+    templateUrl: 'views/artist_signin.html',
     controller: 'ArtistSigninCtrl',
     controllerAs: 'artist'
   })
@@ -64,11 +64,6 @@ var fairMuse = angular
     controller: 'SuccessCtrl',
     controllerAs: 'success'
   })
-  .when('/songs', {
-    templateUrl: 'views/songs.html',
-    controller: 'MainCtrl',
-    controllerAs: 'main'
-  })
   .when('/signup', {
     templateUrl: 'views/signup.html',
     controller: 'SignupCtrl',
@@ -79,8 +74,8 @@ var fairMuse = angular
     controller: 'LoginCtrl',
     controllerAs: 'login'
   })
-  .when('/user', {
-    templateUrl: 'views/user.html',
+  .when('/useraccount', {
+    templateUrl: 'views/user_account.html',
     controller: 'UserCtrl',
     controllerAs: 'user'
   })
@@ -90,7 +85,7 @@ var fairMuse = angular
     controllerAs: 'upload'
   })
   .when('/artistaccount', {
-    templateUrl: 'views/artistaccount.html',
+    templateUrl: 'views/artist_account.html',
     controller: 'ArtistCtrl',
     controllerAs: 'artist'
   })
