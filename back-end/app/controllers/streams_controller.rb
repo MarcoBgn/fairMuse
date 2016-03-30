@@ -3,7 +3,7 @@ class StreamsController < ApplicationController
   FIRST_PLAY=1
 
   def create
-    user_id = params[:user_id] ? params[:user_id] : 0
+    
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
     
     if stream
@@ -36,4 +36,8 @@ class StreamsController < ApplicationController
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
     stream.weekly_plays + 1
   end
+
+  def user_id
+  current_user ? current_user.id : 0  
+  end 
 end
