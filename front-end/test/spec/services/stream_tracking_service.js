@@ -3,16 +3,16 @@ describe('Service: streamTrackingService', function() {
 	
 	beforeEach(function(){
 
-		 module('fairMuseApp');
-     module('ui.bootstrap');
+		module('fairMuseApp');
+		module('ui.bootstrap');
 
- 		inject(function(_$httpBackend_, _streamTrackingService_){
- 			httpBackend = _$httpBackend_
- 			streamTrackingService = _streamTrackingService_
- 			params = {track_id: 1} 	
- 			httpBackend.expectGET('views/main.html').respond(200)
- 			httpBackend.whenPOST('http://localhost:3000/streams', params).respond(200)	
- 		});
+		inject(function(_$httpBackend_, _streamTrackingService_){
+			httpBackend = _$httpBackend_
+			streamTrackingService = _streamTrackingService_
+			params = {track_id: 1} 	
+			httpBackend.expectGET('views/main.html').respond(200)
+			httpBackend.whenPOST('http://localhost:3000/streams', params).respond(200)	
+		});
 	});
 
 	it('sends a post to the API', function() {
