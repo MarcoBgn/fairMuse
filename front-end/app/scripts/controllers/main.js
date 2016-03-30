@@ -8,4 +8,5 @@ angular.module('fairMuseApp')
       'Yan-yi',
       'Marco'
     ];
+     this.user = localStorage.getItem('user_id')
   });
