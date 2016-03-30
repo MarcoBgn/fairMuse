@@ -19,7 +19,7 @@ class StreamsController < ApplicationController
   end
 
   def get_user_stream_info
-    stream_info = Stream.where(user_id: params[:user_id]).map do |stream|
+    stream_info = Stream.where(user_id: user_id).map do |stream|
       {track_id: stream.track_id, total_plays: stream.total_plays}
     end
     render json: stream_info

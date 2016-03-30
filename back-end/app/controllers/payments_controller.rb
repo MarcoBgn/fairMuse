@@ -3,8 +3,7 @@ class PaymentsController < ApplicationController
   def pay
     user_id = params[:user_id]
     user = User.find_by(id: user_id)
-    user_balance = user.balance
-    new_balance = user_balance - 100
+    new_balance = user_balance(user) - 100
     user.update(balance: new_balance)
 
     tot_plays = 0
@@ -27,4 +26,10 @@ class PaymentsController < ApplicationController
     end
     render json:{message: "default message"}
   end
+
+  private 
+  def user_balance(user)
+    user.balance ? user.balance : 0
+  end
+
 end
