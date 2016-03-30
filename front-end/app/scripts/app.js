@@ -89,6 +89,11 @@ var fairMuse = angular
     controller: 'ArtistCtrl',
     controllerAs: 'artist'
   })
+  .when('/subscribe', {
+    templateUrl: 'views/subscribe.html',
+    controller: 'MainCtrl',
+    controllerAs: 'main'
+  })
   .otherwise({
     redirectTo: '/'
   });
