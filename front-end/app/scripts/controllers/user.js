@@ -18,7 +18,6 @@
   };
 
   var success = function(response){
-    console.log(response.data);
     self.returnData = response.data
   };
 

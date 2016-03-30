@@ -25,12 +25,6 @@ class PaymentsController < ApplicationController
       new_balance = cur_balance + payments[index]
       artist.update(balance: new_balance)
     end
+    render json:{message: "default message"}
   end
-  def get_user_stream_info
-    stream_info = Stream.where(user_id: params[:user_id]).map do |stream|
-      {track_id: stream.track_id, total_plays: stream.total_plays}
-    end
-    render json: stream_info
-  end
-
 end

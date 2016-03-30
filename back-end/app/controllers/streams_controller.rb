@@ -35,8 +35,4 @@ class StreamsController < ApplicationController
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
     stream.weekly_plays + 1
   end
-
-  # def user_id
-  #   current_user ? current_user.id : 1
-  # end
 end
