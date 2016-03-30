@@ -8,8 +8,10 @@ class ChargesController < ApplicationController
 
   def create
     @amount = 50
-    @user = params[:user_id]
-
+    user = User.find(params[:user_id])
+    user.balance = 9.99
+    p user.balance 
+    p user
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: params[:stripeToken])
