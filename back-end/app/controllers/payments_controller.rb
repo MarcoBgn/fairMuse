@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
     user = User.find_by(id: params[:user_id])
     user_balance = user.balance || 0
     new_balance = user_balance - 100
+
     user.update(balance: new_balance)
 
     tot_plays = 0
@@ -25,5 +26,10 @@ class PaymentsController < ApplicationController
       artist.update(balance: new_balance)
     end
     render json:{message: "default message"}
+  end
+
+  private
+  def user_balance(user)
+    user.balance ? user.balance : 0
   end
 end

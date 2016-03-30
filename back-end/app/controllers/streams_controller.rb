@@ -3,7 +3,6 @@ class StreamsController < ApplicationController
   FIRST_PLAY=1
 
   def create
-
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
 
     if stream
@@ -39,6 +38,5 @@ class StreamsController < ApplicationController
 
   def user_id
     params[:user_id] ? params[:user_id] : 0
-    # params[:user_id] ||= 0
   end
 end
