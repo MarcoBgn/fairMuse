@@ -89,6 +89,11 @@ var fairMuse = angular
     controller: 'AccountCtrl',
     controllerAs: 'account'
   })
+  .when('/artistaccount', {
+    templateUrl: 'views/artistaccount.html',
+    controller: 'ArtistCtrl',
+    controllerAs: 'artist'
+  })
   .otherwise({
     redirectTo: '/'
   });

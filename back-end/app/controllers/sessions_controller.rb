@@ -6,7 +6,7 @@ class SessionsController < Devise::SessionsController
     user = User.find_for_database_authentication(email: params[:email])
     if user && user.valid_password?(params[:password])
       token = user.ensure_authentication_token
-      render json: {auth_token: token}
+      render json: {auth_token: token, user_id: user.id, is_user: true}
     else
       render nothing: true, status: :unauthorized
     end

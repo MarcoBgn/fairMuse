@@ -1,11 +1,11 @@
-class SessionsController < Devise::SessionsController
+class ArtistsessionsController < Devise::SessionsController
   before_filter :authenticate_user_from_token!, except: [:create]
 
   def create
-    user = User.find_for_database_authentication(email: params[:email])
-    if user && user.valid_password?(params[:password])
-      token = user.ensure_authentication_token
-      render json: {auth_token: token}
+    artist = Artist.find_for_database_authentication(email: params[:email])
+    if artist && artist.valid_password?(params[:password])
+      token = artist.ensure_authentication_token
+      render json: {auth_token: token, artist_id: artist.id, is_artist: true}
     else
       render nothing: true, status: :unauthorized
     end
