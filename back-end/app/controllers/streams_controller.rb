@@ -3,7 +3,7 @@ class StreamsController < ApplicationController
   FIRST_PLAY=1
 
   def create
-    user_id = params[:user_id] ? params[:user_id] : 1000
+    user_id = params[:user_id] ? params[:user_id] : 0
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
     if stream
       stream.update(total_plays: total_count(user_id), weekly_plays: weekly_count(user_id))
