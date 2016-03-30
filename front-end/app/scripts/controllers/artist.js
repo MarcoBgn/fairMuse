@@ -22,10 +22,9 @@ angular.module('fairMuseApp')
       };
 
       var error = function(response) {
-
         flash('Sign up failed!');
      };
-     //
+
      self.displayBalance = function(){
            var promise = self.getBalance();
            promise.then(balanceSuccess, balanceError);

@@ -29,7 +29,6 @@
       });
     }
       this.bob = function(){
-        console.log("howdy")
         var promise = authenticationService.artistLogout();
         promise.then(function(){
           localStorage.removeItem("auth_token");

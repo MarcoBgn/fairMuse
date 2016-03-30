@@ -34,12 +34,12 @@ feature 'payments for artists are calculated' do
     expect(page).not_to have_content('1: 1')
   end
 
-  scenario 'artists can view their balance', js: true do
+  scenario 'artists can view their default balance of zero', js: true do
     visit 'http://localhost:9000/'
     find(:css, "#log_out").click
     artist_log_in
     click_link('Account')
     click_button('Click')
-    expect(page).to have_content('balance')
+    expect(page).to have_content('Current Balance: 0')
   end
 end

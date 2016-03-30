@@ -10,9 +10,11 @@ class ArtistsController < ApplicationController
   end
 
   def get_balance
-    balance = Artist.find_by(id: params[:artist_id])
-    p "----------------"
-    p balance
-    p"--------------------"
+    balance = Artist.find_by(id: params[:artist_id]).balance
+    if balance
+      render json:{balance: balance}
+    else
+      render json:{balance: 0}
+    end
   end
 end
