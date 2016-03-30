@@ -1,7 +1,8 @@
 'use strict';
 
-fairMuse.controller('AccountCtrl', ['Upload', '$timeout', '$location', function (Upload, $timeout, $location) {
+fairMuse.controller('AccountCtrl', ['Upload', '$timeout', '$location','$window', function (Upload, $timeout, $location, $window) {
   var $location = $location
+  var $window = $window
   this.uploadSong = function(file) {
     file.upload = Upload.upload({
       url: 'http://localhost:3000/tracks',
@@ -15,6 +16,7 @@ fairMuse.controller('AccountCtrl', ['Upload', '$timeout', '$location', function 
     file.upload.then(function (response) {
       $timeout(function() {
         file.result = response.data;
+        $window.location.reload()
         $location.path('/songs')
       });
     }, function(response) {

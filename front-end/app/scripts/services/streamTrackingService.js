@@ -3,6 +3,5 @@ angular.module('fairMuseApp').service('streamTrackingService', function($http){
  this.track = function(id){
  	params = {track_id: id}
  	$http.post('http://localhost:3000/streams', params);
-  return 0;
  };
 });
