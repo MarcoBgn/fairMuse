@@ -9,5 +9,4 @@ feature 'Play Uploaded Music' do
 		click_button('1')
 		expect(page).to have_css("#song-name", text: "default track")
 	end
-
 end
