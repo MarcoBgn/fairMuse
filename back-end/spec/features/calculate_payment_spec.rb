@@ -12,22 +12,22 @@ feature 'payments for artists are calculated' do
     click_link('Account')
     click_button('Click')
     expect(page).not_to have_content('1: 1')
+    find(:css, "#log_out").click
   end
 
   scenario 'record is updated when user plays a song', js: true do
     visit 'http://localhost:9000/'
-    find(:css, "#log_out").click
     log_in
     click_link('Songs')
     click_button('Play default song')
     click_link('Account')
     click_button('Click')
     expect(page).to have_content('1: 1')
+    find(:css, "#log_out").click
   end
 
   scenario 'play song when logged out does not change the play count', js: true do
     visit 'http://localhost:9000/'
-    find(:css, "#log_out").click
     log_in
     find(:css, "#log_out").click
     click_link('Songs')
@@ -36,20 +36,20 @@ feature 'payments for artists are calculated' do
     click_link('Account')
     click_button('Click')
     expect(page).not_to have_content('1: 1')
+    find(:css, "#log_out").click
   end
 
   scenario 'artists can view their default balance of zero', js: true do
     visit 'http://localhost:9000/'
-    find(:css, "#log_out").click
     artist_log_in
     click_link('Account')
     click_button('Click')
     expect(page).to have_content('Current Balance: 0')
+    find(:css, "#artist_log_out").click
   end
 
   scenario 'artists are paid in proportion to how many streams they had', js: true do
     visit 'http://localhost:9000'
-    find(:css, "#artist_log_out").click
     log_in
     click_button('Play default song')
     click_button('Play default song')
@@ -62,5 +62,6 @@ feature 'payments for artists are calculated' do
     click_link('Account')
     click_button('Click')
     expect(page).to have_content('Current Balance: 75')
+    find(:css, "#artist_log_out").click
   end
 end

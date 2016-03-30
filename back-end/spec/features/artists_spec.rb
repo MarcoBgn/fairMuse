@@ -14,12 +14,12 @@ feature 'artists can sign up' do
     fill_in 'password_confirmation', with: '12345678'
     click_button('Sign up')
     expect(page).to have_content('Log out')
+    find(:css, "#artist_log_out").click
   end
-  before do
-    Artist.create(email:'artyartison@gmail.com', password: '12345678')
-  end
+
   scenario 'does not allow an artist to sign up with same email twice', js: true do
     visit 'http://localhost:9000/'
+    Artist.create(email: 'artyartison@gmail.com', password: '12345678')
     click_link('Artists')
     fill_in 'email', with: 'artyartison@gmail.com'
     fill_in 'password', with: '12345678'
@@ -31,22 +31,27 @@ feature 'artists can sign up' do
   scenario "an artist can sign in", js: true do
     visit 'http://localhost:9000/'
     click_link('Artist Sign In')
+    Artist.create(email: 'artyartison@gmail.com', password: '12345678')
     fill_in 'email', with: 'artyartison@gmail.com'
     fill_in 'password', with: '12345678'
     click_button('Log in')
     expect(page).to have_content('Log out')
+    find(:css, "#artist_log_out").click
   end
 
   scenario "a link to artist account is displayed after signing in", js: true do
     visit 'http://localhost:9000/'
+    Artist.create(email: "name@email.com", password: "12345678")
     artist_log_in
     click_link("Account")
     expect(page).to have_content("Artist Account")
-
+    find(:css, "#artist_log_out").click
   end
 
   scenario 'an artist can sign out', js: true do
     visit 'http://localhost:9000/'
+    Artist.create(email: "name@email.com", password: "12345678")
+    artist_log_in
     find(:css, "#artist_log_out").click
     expect(page).to_not have_content('Log out')
   end
