@@ -16,5 +16,4 @@ class ArtistsessionsController < Devise::SessionsController
     current_user.save
     render json: {message: 'message' }
   end
-
 end

@@ -1,8 +1,7 @@
 class PaymentsController < ApplicationController
 
   def pay
-    user_id = params[:user_id]
-    user = User.find_by(id: user_id)
+    user = User.find_by(id: params[:user_id])
     user_balance = user.balance
     new_balance = user_balance - 100
     user.update(balance: new_balance)
@@ -10,7 +9,7 @@ class PaymentsController < ApplicationController
     tot_plays = 0
     track_num =[]
     track_plays = []
-    streams = Stream.where(user_id: user_id).each do |stream|
+    streams = Stream.where(user_id: params[:user_id]).each do |stream|
       tot_plays += stream.total_plays
       track_num << stream.track_id
       track_plays << stream.total_plays

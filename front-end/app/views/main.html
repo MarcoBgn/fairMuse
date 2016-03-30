@@ -1,13 +1,9 @@
 <div ng-include="'views/navbar.html'"></div>
-<div class="jumbotron">
-  <h1>FairMuse</h1>
-
-  SONG LIST
-  SEARCH
-  <p>
-    <button ng-click="player.changeSource(1)">Change source 1 (Videogular)</button>
-    <button ng-click="player.changeSource(2)">Change source 2 (s3 Yan-Yi's Electro)</button>
-    <button ng-click="player.changeSource(3)">Change source 3 (s3 Modern World)</button>
-  </p>
+  <div class="jumbotron">
+    <h1>FairMuse</h1>
+  <input name="search_bar" type="text" ng-model="query" placeholder="search artist, genre, title...">
+  <div ng-repeat="song in player.songList | filter:query">
+    {{song.songId}} {{song.name}} <button id={{song.songId}} ng-click="player.changeSource(song.songId)">Play {{song.name}}</button>
+  </div>
 
 </div>
