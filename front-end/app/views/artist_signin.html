@@ -2,10 +2,10 @@
 <div>
 <flash:messages>
 </div>
-<form name="login_form" ng-submit="artist.sendForm(email, password)">
+<form name="login_form" ng-submit="artistSignin.sendForm(email, password)">
 <label for="email">Email</label>
-<input type="email" name="email" ng-model="artist.email">
+<input type="email" name="email" ng-model="artistSignin.email">
 <label for="password">Password</label>
-<input type="password" name="password" ng-model="artist.password">
+<input type="password" name="password" ng-model="artistSignin.password">
 <button type="submit">Log in</button>
 </form>
