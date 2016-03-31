@@ -1,33 +1,52 @@
 <div ng-include="'views/navbar.html'"></div>
 <div>
   <form name="fileUploadForm">
-    <fieldset>
+    <div class="form-group row">
       <legend>Upload your track</legend>
-      <label for="trackname"> Track name: </label>
-      <input type="text" name="trackname" ng-model="upload.trackName" size="31" required>
-      <i ng-show="fileUploadForm.trackname.$error.required">*required</i><br>
-      <label for="genre"> Genre: </label>
-      <input type="text" name="genre" ng-model="upload.genre" placeholder="What is your sound?" size="24">
-      <br>File:
-      <input type="file" ngf-select ng-model="audioFile" name="file" accept="audio/*" ngf-max-size="9MB" required ngf-model-invalid="errorFile">
+      <label for="trackname" class="col-sm-2 col-sm-offset-2 form-control-label"> Track name: </label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control"name="trackname" ng-model="upload.trackName" size="31" required>
+        <i ng-show="fileUploadForm.trackname.$error.required">*required</i>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="genre" class="col-sm-2 col-sm-offset-2 form-control-label"> Genre: </label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control"name="genre" ng-model="upload.genre" placeholder="What is your sound?" size="24">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="File" class="col-sm-2 col-sm-offset-2 form-control-label">Song:</label>
+      <div class="col-sm-6">
+        <input type="file" ngf-select ng-model="audioFile" name="file" accept="audio/*" ngf-max-size="9MB" required ngf-model-invalid="errorFile">
+        <i ng-show="fileUploadForm.file.$error.required">*required</i>
+      </div>
+    </div>
+    <div class="form-group row">
+     <label for="File" class="col-sm-2 col-sm-offset-2 form-control-label">Image:</label>
+     <div class="col-sm-6">
       <input type="file" ngf-select ng-model="picFile" name="picfile" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorImage">
-      <i ng-show="fileUploadForm.file.$error.required">*required</i>
-      <br>
       <i ng-show="fileUploadForm.file.$error.maxSize">File too large
-                {{errorFile.size / 1000000|number:1}}MB: max 9MB</i>
-      <i ng-show="fileUploadForm.file.$error.maxSize">File too large
-                {{errorImage.size / 1000000|number:1}}MB: max 2MB</i>
+        {{errorFile.size / 1000000|number:1}}MB: max 9MB</i>
+        <i ng-show="fileUploadForm.file.$error.maxSize">File too large
+          {{errorImage.size / 1000000|number:1}}MB: max 2MB</i>
+        </div>
+      </div>
       <button ng-click="file = null" ng-show="file">Remove</button>
       <br>
-      <button ng-disabled="!fileUploadForm.$valid" ng-click="upload.uploadSong(audioFile, picFile)">Upload</button>
+      <div class="form-group row">
+        <div class="col-sm-offset-4 col-sm-10">
+          <button ng-disabled="!fileUploadForm.$valid" ng-click="upload.uploadSong(audioFile, picFile)">Upload</button>
+        </div>
+      </div>
       <span class="progress" ng-show="audioFile.progress >= 0">
         <div style="width:{{audioFile.progress}}%"
-            ng-bind="audioFile.progress + '%'">
-        </div>
-      </span>
-      <span ng-show="audioFile.result">Upload Successful</span>
-      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-    </fieldset>
-    <br>
-  </form>
+        ng-bind="audioFile.progress + '%'">
+      </div>
+    </span>
+    <span ng-show="audioFile.result">Upload Successful</span>
+    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+  </div>
+  <br>
+</form>
 </div>
