@@ -51,6 +51,10 @@ body {
   heigth: 80px;
 }
 
+#search_bar {
+  color: black !important;
+}
+
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -76,9 +80,6 @@ body {
   }
 }
 
-.carousel {
-  cursor: pointer;
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

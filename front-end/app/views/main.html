@@ -2,14 +2,14 @@
 <div class="jumbotron">
 
   <section class='main'>
-      <div class='my_carousel' ng-controller="MyCarouselController">
+      <div class='my_carousel' ng-controller="MyCarouselController as myCarousel">
          <div class='center_block'>
            <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-             <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-               <img ng-src="{{slide.image}}" style="margin:auto;">
+             <uib-slide ng-repeat="slide in myCarousel.slides track by slide.id" index="slide.id">
+               <img ng-src="{{slide.image}}" style="margin:auto; height:500px;">
                <div class="carousel-caption">
-                 <h1>Where Next?</h1>
-                 <p>{{slide.text}}</p>
+                <h1>FairMuse</h1>
+                <input id='search_bar' name="search_bar" type="text" ng-model="query" placeholder="search artist, genre, title...">
                </div>
              </uib-slide>
            </uib-carousel>
@@ -18,12 +18,11 @@
      </section>
 
 
-  <h1>FairMuse</h1>
-  <input name="search_bar" type="text" ng-model="query" placeholder="search artist, genre, title...">
-</div>
+
+<h1>Search Artists</h1>
 
 
-
+ </div>
  <div ng-repeat="song in player.songList | filter:query">
    <div class="track_container"> <img ng-src={{song.image}}/> <span>{{song.id}} {{song.name}} <button id={{song.songId}} ng-click="player.changeSource(song.songId)">Play {{song.name}}</button> </span>
    </div>

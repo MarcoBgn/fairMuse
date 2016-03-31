@@ -1,26 +1,33 @@
-fairMuse.controller('MyCarouselController', function ($scope) {
+fairMuse.controller('MyCarouselController', function () {
 
-  $scope.myInterval = 5000;
-  $scope.noWrapSlides = false;
-  $scope.active = 0;
-  var slides = $scope.slides = [];
+  var self = this;
+
+  this.myInterval = 5000;
+  this.noWrapSlides = false;
+  this.active = 0;
+  var pics = ["http://bsrv.wallpapersten.com/media/wp/1-17-4/brunette-with-headphones-enjoying-the-music-1080p-girl-desktop-wallpaper-27464.jpg", "http://img.gawkerassets.com/img/17vzbduvh99gnjpg/original.jpg", "https://whileyouweresleeping.files.wordpress.com/2015/04/maxresdefault.jpg", "http://c8.alamy.com/comp/AXPJ9C/a-steel-worker-in-front-of-a-blast-furnace-in-benxi-iron-and-steel-AXPJ9C.jpg"]
+
+  var slides = this.slides = [];
   var currIndex = 0;
 
-  $scope.addSlide = function() {
+  this.addSlide = function() {
     var newWidth = 900 + slides.length + 1;
     slides.push({
-      image: 'http://lorempixel.com/' + newWidth + '/450/city',
+      image: pics[currIndex],
       text: ['Space','Night','Peace','Adventure'][slides.length % 4],
       id: currIndex++
     });
   };
 
-  $scope.randomize = function() {
+
+
+
+  this.randomize = function() {
     var indexes = generateIndexesArray();
     assignNewIndexesToSlides(indexes);
   };
 
   for (var i = 0; i < 4; i++) {
-    $scope.addSlide();
+    this.addSlide();
   }
 });
