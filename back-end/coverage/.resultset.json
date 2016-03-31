@@ -136,6 +136,50 @@
         null,
         null
       ],
+      "/Users/marcobagnasco/Desktop/finalProject/fairMuse/back-end/spec/models/track_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        10,
+        null,
+        null,
+        1,
+        null,
+        2,
+        2,
+        2,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        1,
+        null,
+        2,
+        2,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        1,
+        null,
+        2,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/marcobagnasco/Desktop/finalProject/fairMuse/back-end/app/models/track.rb": [
         1,
         1,
@@ -162,8 +206,14 @@
         1,
         1,
         null
+      ],
+      "/Users/marcobagnasco/Desktop/finalProject/fairMuse/back-end/app/models/stream.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1459415583
+    "timestamp": 1459416188
   }
 }
