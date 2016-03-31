@@ -9,5 +9,4 @@ class ArtistregController < Devise::RegistrationsController
       render nothing: true, status: 422
     end
   end
-
 end

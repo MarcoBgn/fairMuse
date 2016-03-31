@@ -4,16 +4,7 @@ class StreamsController < ApplicationController
 
   def create
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)
-
-    if stream
-      stream.update(total_plays: total_count(user_id), weekly_plays: weekly_count(user_id))
-      stream.save
-    else
-      Stream.create(track_id: params[:track_id],
-        user_id: user_id,
-        total_plays: FIRST_PLAY,
-        weekly_plays: FIRST_PLAY)
-    end
+    add_stream(stream, params[:track_id])
     render json:{}, status: :ok
   end
 
@@ -25,6 +16,18 @@ class StreamsController < ApplicationController
   end
 
   private
+
+  def add_stream(stream, track_id)
+    if stream
+      stream.update(total_plays: total_count(user_id), weekly_plays: weekly_count(user_id))
+      stream.save
+    else
+      Stream.create(track_id: track_id,
+        user_id: user_id,
+        total_plays: FIRST_PLAY,
+        weekly_plays: FIRST_PLAY)
+    end
+  end
 
   def total_count(user_id)
     stream = Stream.find_by(track_id: params[:track_id], user_id: user_id)

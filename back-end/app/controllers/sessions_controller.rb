@@ -21,5 +21,4 @@ class SessionsController < Devise::SessionsController
   def session_user
     session[:user] = current_user
   end
-
 end
