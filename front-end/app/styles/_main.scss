@@ -22,6 +22,10 @@ body {
   padding: 0;
 }
 
+header {
+  height: 80px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -62,6 +66,10 @@ body {
 
 .container-narrow > hr {
   margin: 30px 0;
+}
+
+.front-hero {
+  padding: 0;
 }
 
 /* Main info message and sign up button */
