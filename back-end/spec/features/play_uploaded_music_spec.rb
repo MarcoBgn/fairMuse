@@ -1,12 +1,17 @@
-ENV['RAILS_ENV']='development'
-
 feature 'Play Uploaded Music' do
-	scenario 'User uploads and plays uploaded track', js: true do
-		visit 'http://localhost:9000/#/account'
+	
+	before do 
+		Artist.create(email: 'artyartison@gmail.com', password: '12345678')
+		visit 'http://localhost:9000/'
+	end
+
+	scenario 'User uploads and displays uploaded track', js: true do
+		artist_log_in('artyartison@gmail.com', '12345678')
 		upload_track
-		click_link('Songs')
-		sleep(10)
-		click_button('1')
-		expect(page).to have_css("#song-name", text: "default track")
+		sleep(3)
+		click_link('Home')
+		click_button('Play default track')
+		expect(page).to have_content('Play default track')
+		sleep(3)
 	end
 end

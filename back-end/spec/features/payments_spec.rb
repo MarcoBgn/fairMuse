@@ -1,6 +1,7 @@
 feature 'Contribution payments' do
 
   scenario 'the payment is successful', js: true do
+    User.create(id: 0, email:'admin@gmail.com', password: '12345678', balance: 100)
     visit 'http://localhost:9000/'
     sleep(3)
     click_link 'About'

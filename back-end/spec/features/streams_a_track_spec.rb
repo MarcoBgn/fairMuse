@@ -1,5 +1,3 @@
-ENV['RAILS_ENV']='development'
-
 feature 'Tracks the number of plays a song has' do
 
   scenario 'Logged in user can play a song thats already streamed', js: true do
