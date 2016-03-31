@@ -22,7 +22,7 @@ RSpec.describe Track, type: :model do
     it { is_expected.to have_attached_file(:image) }
     it { is_expected.to validate_attachment_content_type(:image).
         allowing('image/*').
-        rejecting('text/plain', 'audio/*')  
+        rejecting('text/plain', 'audio/*') } 
     it { is_expected.to validate_attachment_size(:image).
        in(0..4.megabytes) }
   end
