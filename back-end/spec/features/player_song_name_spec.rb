@@ -1,9 +1,9 @@
 feature	'displays song name' do	
-  
-  after(:each) do
-    page.execute_script("window.localStorage.clear()")
-  end
-  
+	
+	after(:each) do
+		page.execute_script("window.localStorage.clear()")
+	end
+	
 	scenario  'displays song name in player', js: true do
 		Artist.create(email: 'artyartison@gmail.com', password: '12345678')
 		visit 'http://localhost:9000/'
