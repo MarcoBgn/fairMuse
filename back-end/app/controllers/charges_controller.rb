@@ -33,7 +33,7 @@ class ChargesController < ApplicationController
       
     @charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: @amount ? @amount : SUBSCRIPTION_AMOUNT,
+      amount: (@amount ? @amount : SUBSCRIPTION_AMOUNT),
       description: 'artist contribution',
       currency: 'gbp')
       @amount ? @user.balance += @amount : @user.balance = SUBSCRIPTION_AMOUNT
