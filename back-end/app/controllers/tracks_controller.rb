@@ -3,7 +3,7 @@ class TracksController < ApplicationController
 
   def index
     @tracks = Track.all
-    render json: @tracks.to_json(methods: [:track_url])
+    render json: @tracks.to_json(methods: [:track_url, :image_url])
   end
 
   def show
@@ -39,6 +39,6 @@ class TracksController < ApplicationController
     end
 
     def track_params
-      params.require(:track).permit(:name, :genre, :file, :artist_id)
+      params.require(:track).permit(:name, :genre, :file, :image, :artist_id)
     end
 end

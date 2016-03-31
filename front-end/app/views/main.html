@@ -3,7 +3,8 @@
     <h1>FairMuse</h1>
   <input name="search_bar" type="text" ng-model="query" placeholder="search artist, genre, title...">
   <div ng-repeat="song in player.songList | filter:query">
-    {{song.songId}} {{song.name}} <button id={{song.songId}} ng-click="player.changeSource(song.songId)">Play {{song.name}}</button>
+     <div class="track_container"> <img ng-src={{song.image}}/> <span>{{song.id}} {{song.name}} <button id={{song.songId}} ng-click="player.changeSource(song.songId)">Play {{song.name}}</button> </span> 
+     </div>
   </div>
 
 </div>
