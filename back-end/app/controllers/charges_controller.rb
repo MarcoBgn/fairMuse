@@ -18,8 +18,9 @@ class ChargesController < ApplicationController
   def user_type(params_id)
     if params_id
       @user = User.find(params_id)
-    end
-      @user = User.find(0)
+    else
+       @user = User.find(0)
+    end  
   end
   
   def parse_amount(amount)
