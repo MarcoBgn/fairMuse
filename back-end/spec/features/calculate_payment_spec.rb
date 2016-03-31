@@ -18,7 +18,7 @@ feature 'payments for artists are calculated' do
   scenario 'record is updated when user plays a song', js: true do
     visit 'http://localhost:9000/'
     log_in
-    click_link('Songs')
+    click_link('fairMuse')
     click_button('Play default song')
     click_link('Account')
     click_button('Click')
