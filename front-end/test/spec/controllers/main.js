@@ -14,8 +14,4 @@ describe('Controller: MainCtrl', function () {
       $scope: scope
     });
   }));
-
-  it('should attach the team member names to the scope', function () {
-    expect(MainCtrl.awesomeTeam.length).toBe(4);
-  });
 });

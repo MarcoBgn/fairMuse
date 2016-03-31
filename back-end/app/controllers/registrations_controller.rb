@@ -6,9 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
       token = user.ensure_authentication_token
       render json: {auth_token: token, user_id: user.id, is_user: true}
     else
-      # warden.custom_failure!
       render json: {messages: user.errors.full_messages}, status: 422
     end
   end
-
 end
