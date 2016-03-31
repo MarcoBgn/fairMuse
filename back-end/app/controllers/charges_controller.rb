@@ -7,25 +7,11 @@ class ChargesController < ApplicationController
   end
 
   def create
-    amount = params[:amount]
+    @amount = params[:amount]
     if_user(params[:user_id])
     @user.balance = 0
-    amount ? @user.balance += amount.to_i : @user.balance = 9
-
-    customer = Stripe::Customer.create(
-    email: params[:stripeEmail],
-    source: params[:stripeToken])
-
-    @charge = Stripe::Charge.create(
-      customer: customer.id,
-      amount: amount ? amount.to_i : 900,
-      description: 'artist contribution',
-      currency: 'gbp')
-
-    redirect_to 'http://localhost:9000/#/success'
-  rescue Stripe::CardError => error
-    flash[:error] = error.message
-    redirect_to new_charge_path
+    @amount ? @user.balance += @amount.to_i : @user.balance = 9
+    stripe(params[:stripeEmail], params[:stripeToken])
   end
 
   private
@@ -37,4 +23,23 @@ class ChargesController < ApplicationController
       @user = User.find(0)
     end
   end
+
+  def stripe(email, token)
+    customer = Stripe::Customer.create(
+      email: email,
+      source: token)
+
+    @charge = Stripe::Charge.create(
+      customer: customer.id,
+      amount: @amount ? @amount.to_i : 900,
+      description: 'artist contribution',
+      currency: 'gbp')
+
+    redirect_to 'http://localhost:9000/#/success'
+  rescue Stripe::CardError => error
+    flash[:error] = error.message
+    redirect_to new_charge_path
+  end
+
 end
+
