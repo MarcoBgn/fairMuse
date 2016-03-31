@@ -12,7 +12,9 @@ class Track < ActiveRecord::Base
     thumb: '200x200>',
     medium: '500x500>'
   }
-  validates_attachment_content_type :image , :content_type => /\Aimage\/.*\Z/
+  validates_attachment :image,
+  content_type: { content_type: /\Aimage\/.*\Z/},
+  size: { in: 0..4.megabytes }
   
   def image_url
     image.url(:thumb)
