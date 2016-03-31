@@ -13,6 +13,7 @@ fairMuse.controller('PlayerCtrl',
            songId: i+1,
            name: self.tracks[i].name,
            genre: self.tracks[i].genre,
+           image: self.tracks[i].image_url,
            artist_id: self.tracks[i].artist_id,
            sources: [
              {

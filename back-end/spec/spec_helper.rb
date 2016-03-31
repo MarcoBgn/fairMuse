@@ -43,5 +43,8 @@ RSpec.configure do |config|
     Dir["#{Rails.root}/public/system/tracks/files/**/**/*.*"].each do |file|
       File.delete(file)
     end
+    Dir["#{Rails.root}/public/system/tracks/images/**/**/*.*"].each do |file|
+      File.delete(file)
+    end
   end
 end

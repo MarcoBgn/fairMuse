@@ -10,14 +10,16 @@
       <input type="text" name="genre" ng-model="upload.genre" placeholder="What is your sound?" size="24">
       <br>File:
       <input type="file" ngf-select ng-model="audioFile" name="file" accept="audio/*" ngf-max-size="9MB" required ngf-model-invalid="errorFile">
-      <input type="file" ngf-select ng-model="picFile" name="picfile" accept="image/*" ngf-max-size="1MB" ngf-model-invalid="errorFile">
+      <input type="file" ngf-select ng-model="picFile" name="picfile" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorImage">
       <i ng-show="fileUploadForm.file.$error.required">*required</i>
       <br>
       <i ng-show="fileUploadForm.file.$error.maxSize">File too large
                 {{errorFile.size / 1000000|number:1}}MB: max 9MB</i>
+      <i ng-show="fileUploadForm.file.$error.maxSize">File too large
+                {{errorImage.size / 1000000|number:1}}MB: max 2MB</i>
       <button ng-click="file = null" ng-show="file">Remove</button>
       <br>
-      <button ng-disabled="!fileUploadForm.$valid" ng-click="upload.uploadSong(audioFile)">Upload</button>
+      <button ng-disabled="!fileUploadForm.$valid" ng-click="upload.uploadSong(audioFile, picFile)">Upload</button>
       <span class="progress" ng-show="audioFile.progress >= 0">
         <div style="width:{{audioFile.progress}}%"
             ng-bind="audioFile.progress + '%'">

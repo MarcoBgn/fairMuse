@@ -3,12 +3,12 @@
 fairMuse.controller('UploadCtrl', ['Upload', '$timeout', '$location','$window', function (Upload, $timeout, $location, $window) {
   var $location = $location
   var $window = $window
-  this.uploadSong = function(file) {
+  this.uploadSong = function(file, picfile) {
     file.upload = Upload.upload({
       url: 'http://localhost:3000/tracks',
       data: {
         track: {
-          name: this.trackName, genre: this.genre, file: file, artist_id: localStorage.getItem('artist_id')
+          name: this.trackName, genre: this.genre, file: file, image: picfile, artist_id: localStorage.getItem('artist_id')
         }
       }
     });
