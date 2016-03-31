@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Tracks", type: :request do
   
   before do
-    @track = [create_track_with_file].to_json
+    @track = [create_track_with_file].to_json(methods: [:track_url, :image_url])
   end
   
   describe "GET /tracks" do
