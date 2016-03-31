@@ -75,7 +75,20 @@ body {
     margin-top: 28px;
   }
 }
-
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -97,4 +110,5 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
 }
