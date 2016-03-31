@@ -3,7 +3,7 @@
   <div>
   <flash:messages></flash:messages>
   </div>
-<button id="Click" ng-click="user.displayStreamDetails()">Click</button>
+<button id="Click" ng-click="user.displayStreamDetails()" class="btn">Click</button>
 
 <div ng-repeat="track in user.returnData">
   <p>{{track.track_id}}: {{track.total_plays}}</p>
