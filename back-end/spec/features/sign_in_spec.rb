@@ -2,6 +2,10 @@ feature 'Sign in' do
   before do
     User.create(email:'admin@gmail.com', password: '12345678')
   end
+  
+  after(:each) do
+    page.execute_script("window.localStorage.clear()")
+  end
 
   scenario "allows a user to sign in", js: true do
     visit 'http://localhost:9000/'
