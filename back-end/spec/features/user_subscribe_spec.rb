@@ -7,7 +7,9 @@ feature 'User subscribes during sign up', js: true do
     fill_in 'password_confirmation', with: '12345678'
     click_button('Sign up')
     click_button('Subscribe')
+    sleep(3)
     contribute_with_card
+    sleep(3)
     expect(page).to have_content "Contribution Made! Thank You!"
   end
 end

@@ -12,6 +12,7 @@ def create_track_with_file_and_image(name="default")
 end
 
 def upload_track(name="default track")
+	click_link('Upload Sound')
 	fill_in "trackname", with: name
 	fill_in "genre", with: "Alternative"
 	attach_file 'file', Rails.root.join('spec','fixtures','testsong.mp3')
