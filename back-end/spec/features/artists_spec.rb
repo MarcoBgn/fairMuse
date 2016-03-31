@@ -2,13 +2,13 @@ feature 'artists can sign up' do
 
   scenario 'there is a artist sign-up page', js: true do
     visit 'http://localhost:9000/'
-    click_link('Artists')
-    expect(current_url).to eq('http://localhost:9000/#/artist')
+    click_link('Artists Sign Up')
+    expect(current_url).to eq('http://localhost:9000/#/artistsignup')
   end
   scenario 'an artist can sign up', js: true do
     visit 'http://localhost:9000/'
-    click_link('Artists')
-    expect(current_url).to eq('http://localhost:9000/#/artist')
+    click_link('Artists Sign Up')
+    expect(current_url).to eq('http://localhost:9000/#/artistsignup')
     fill_in 'email', with: 'email@gmail.com'
     fill_in 'password', with: '12345678'
     fill_in 'password_confirmation', with: '12345678'
@@ -20,11 +20,12 @@ feature 'artists can sign up' do
   scenario 'does not allow an artist to sign up with same email twice', js: true do
     visit 'http://localhost:9000/'
     Artist.create(email: 'artyartison@gmail.com', password: '12345678')
-    click_link('Artists')
+    click_link('Artists Sign Up')
     fill_in 'email', with: 'artyartison@gmail.com'
     fill_in 'password', with: '12345678'
     fill_in 'password_confirmation', with: '12345678'
     click_button('Sign up')
+    sleep(2)
     expect(page).to have_content('Sign up failed!')
   end
 

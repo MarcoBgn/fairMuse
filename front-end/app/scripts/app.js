@@ -61,8 +61,8 @@ var fairMuse = angular
   })
   .when('/success', {
     templateUrl: 'views/success.html',
-    controller: 'SuccessCtrl',
-    controllerAs: 'success'
+    controller: 'MainCtrl',
+    controllerAs: 'main'
   })
   .when('/signup', {
     templateUrl: 'views/signup.html',
