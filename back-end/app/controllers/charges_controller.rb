@@ -7,10 +7,10 @@ class ChargesController < ApplicationController
   end
 
   def create
-    amount = params[:amount].to_i
+    amount = params[:amount]
     if_user(params[:user_id])
     @user.balance = 0
-    amount ? @user.balance += amount : @user.balance = 9
+    amount ? @user.balance += amount.to_i : @user.balance = 9
 
     customer = Stripe::Customer.create(
     email: params[:stripeEmail],
@@ -18,7 +18,7 @@ class ChargesController < ApplicationController
 
     @charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: amount ? amount : 900,
+      amount: amount ? amount.to_i : 900,
       description: 'artist contribution',
       currency: 'gbp')
 
