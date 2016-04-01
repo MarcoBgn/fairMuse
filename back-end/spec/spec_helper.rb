@@ -2,7 +2,9 @@ require "rails_helper"
 require "payments_helper"
 require "upload_helper"
 require "login_helper"
+require "stream_helper"
 require 'coveralls'
+
 
 Coveralls.wear!
 

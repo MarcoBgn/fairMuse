@@ -1,5 +1,9 @@
 feature 'artists can sign up' do
-
+  
+  after(:each) do
+    page.execute_script("window.localStorage.clear()")
+  end
+  
   scenario 'there is a artist sign-up page', js: true do
     visit 'http://localhost:9000/'
     click_link('Artists Sign Up')
@@ -42,10 +46,10 @@ feature 'artists can sign up' do
 
   scenario "a link to artist account is displayed after signing in", js: true do
     visit 'http://localhost:9000/'
-    Artist.create(email: "name@email.com", password: "12345678")
+    Artist.create(name: "Band", email: "name@email.com", password: "12345678")
     artist_log_in
     click_link("Account")
-    expect(page).to have_content("Artist Account")
+    expect(page).to have_content("Band")
     find(:css, "#artist_log_out").click
   end
 
