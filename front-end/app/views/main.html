@@ -1,12 +1,12 @@
 <div ng-include="'views/navbar.html'"></div>
-<div class="jumbotron">
+<div class="jumbotron front-hero">
 
   <section class='main'>
       <div class='my_carousel' ng-controller="MyCarouselController as myCarousel">
          <div class='center_block'>
            <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
              <uib-slide ng-repeat="slide in myCarousel.slides track by slide.id" index="slide.id">
-               <img ng-src="{{slide.image}}" style="margin:auto; height:500px;">
+               <img ng-src="{{slide.image}}" style="margin:auto; height:300px;">
                <div class="carousel-caption">
                 <h1>FairMuse</h1>
                   <input id='search_bar' name="search_bar" type="text" ng-model="player.query" placeholder="search artist, genre, title...">
@@ -27,5 +27,3 @@
         </div>
       </div>
 </div>
- 
-  

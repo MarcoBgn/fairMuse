@@ -72,6 +72,10 @@ body {
   }
 }
 
+label {
+  color: #555;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -85,13 +89,17 @@ body {
 }
 
 #search_bar {
-  color: black !important;
   width: 335px;
   height: 40px;
+  color: #555 !important;
 }
 
 .container-narrow > hr {
   margin: 30px 0;
+}
+
+.front-hero {
+  padding: 0;
 }
 
 /* Main info message and sign up button */
@@ -99,7 +107,7 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
   background-color: #f2fff5 !important;
-  
+
   .btn {
     font-size: 21px;
     padding: 14px 24px;

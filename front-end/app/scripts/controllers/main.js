@@ -15,7 +15,5 @@ angular.module('fairMuseApp')
         }
       ];
     }
-  
     self.user = localStorage.getItem('user_id')
-
   });

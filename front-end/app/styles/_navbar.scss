@@ -1,0 +1,35 @@
+$primary-color: #63A091;
+$secondary-color: #83b3a7;
+$light-text-color: #fff;
+
+.navbar-default {
+  background-color: $primary-color;
+}
+
+.navbar-default .navbar-brand {
+  color: $light-text-color;
+}
+
+a.navbar-brand:hover {
+  opacity: 0.75 !important;
+  background-color: $secondary-color !important;
+  color: $light-text-color !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: $light-text-color;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $light-text-color;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  opacity: 0.75;
+  background-color: $secondary-color;
+  color: $light-text-color;
+}
+
+a#log_out:hover {
+  cursor: pointer;
+}

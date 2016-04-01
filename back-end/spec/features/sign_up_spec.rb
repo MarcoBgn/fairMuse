@@ -1,5 +1,9 @@
 feature 'Sign up' do
-  
+
+  before(:each) do
+    page.execute_script("window.localStorage.clear()")
+  end
+
   after(:each) do
     page.execute_script("window.localStorage.clear()")
   end
