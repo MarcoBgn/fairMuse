@@ -12,6 +12,17 @@ h1, h2, h3, h4, h5, h6 {
   color: $error-color;
 }
 
+li.success, li.error {
+  text-align: center;
+  list-style: none;
+  color: $error-color;
+}
+
+.progress {
+  color: $title-color;
+  font-size: 20px;
+}
+
 input {
   color: $dark-text-color;
 }

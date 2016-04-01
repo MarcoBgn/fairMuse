@@ -39,14 +39,18 @@
           <button ng-disabled="!fileUploadForm.$valid" ng-click="upload.uploadSong(audioFile, picFile)" class="btn">Upload</button>
         </div>
       </div>
-      <span class="progress" ng-show="audioFile.progress >= 0">
-        <div style="width:{{audioFile.progress}}%"
-        ng-bind="audioFile.progress + '%'">
+      <div class="row">
+        <div class="col-sm-offset-4 col-sm-10">
+          <span class="progress" ng-show="audioFile.progress >= 0">
+            <div style="width:{{audioFile.progress}}%"
+            ng-bind="audioFile.progress + '%'">
+            </div>
+          </span>
+        </div>
       </div>
-    </span>
-    <span ng-show="audioFile.result">Upload Successful</span>
-    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-  </div>
+      <span ng-show="audioFile.result">Upload Successful</span>
+      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+    </div>
   <br>
 </form>
 </div>

@@ -10,6 +10,7 @@ $light-text-color: #fff;
 .btn:hover {
   opacity: 0.75;
   background-color: $secondary-color;
+  color: $light-text-color;
 }
 
 .stripe-button-el {
