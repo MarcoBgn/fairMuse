@@ -12,9 +12,6 @@ angular.module('fairMuseApp')
         },
         {
           image: 'http://img.gawkerassets.com/img/17vzbduvh99gnjpg/original.jpg'
-        },
-        {
-          image: 'http://l7.alamy.com/zooms/c930861ceb6f48feafde7c6147d2e01e/a-steel-worker-in-front-of-a-blast-furnace-in-benxi-iron-and-steel-axpjcf.jpg '
         }
       ];
     }
