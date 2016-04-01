@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Antic+Slab);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+$antic-slab: 'Antic Slab', serif;
+$font-stack: 'Open Sans', sans-serif;
+
 $title-color: #777;
 $dark-text-color: #555;
 $error-color: #ed0000;
@@ -8,8 +14,16 @@ h1, h2, h3, h4, h5, h6 {
   color: $title-color;
 }
 
+html, body {
+  font-family: $font-stack;
+}
+
 p, span {
   color: $dark-text-color;
+}
+
+.navbar-brand, #brand {
+  font-family: $antic-slab;
 }
 
 .error {

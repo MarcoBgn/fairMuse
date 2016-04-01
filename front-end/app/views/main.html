@@ -8,7 +8,7 @@
              <uib-slide ng-repeat="slide in myCarousel.slides track by slide.id" index="slide.id">
                <img ng-src="{{slide.image}}" style="margin:auto; height:300px;">
                <div class="carousel-caption">
-                <h1>FairMuse</h1>
+                <h1 id="brand">FairMuse</h1>
                   <input id='search_bar' name="search_bar" type="text" ng-model="player.query" placeholder="search artist, genre, title...">
                </div>
              </uib-slide>
