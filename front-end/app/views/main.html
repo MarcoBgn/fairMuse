@@ -1,12 +1,12 @@
 <div ng-include="'views/navbar.html'"></div>
-<div class="jumbotron front-hero">
+<div class="jumbotron">
 
   <section class='main'>
       <div class='my_carousel' ng-controller="MyCarouselController as myCarousel">
          <div class='center_block'>
            <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
              <uib-slide ng-repeat="slide in myCarousel.slides track by slide.id" index="slide.id">
-               <img ng-src="{{slide.image}}" style="margin:auto; height:300px;">
+               <img ng-src="{{slide.image}}" style="margin:auto; height:500px;">
                <div class="carousel-caption">
                 <h1>FairMuse</h1>
                   <input id='search_bar' name="search_bar" type="text" ng-model="player.query" placeholder="search artist, genre, title...">
@@ -22,8 +22,10 @@
     <div class='container'>
       <div class='row center-block'>
        <div ng-repeat="song in player.songList | filter:player.query">
-           <div class="track_container col-sm-4"> <img class='img_click' ng-click="player.changeSource(song.songId)" ng-src={{song.image}}><span class='song_details'>{{song.id}} {{song.name}} - {{song.genre}} - {{song.artist_name}}</span>
+           <div class="track_container col-sm-4"> <img id={{song.name}} class='img_click' ng-click="player.changeSource(song.songId)" ng-src={{song.image}}><span class='song_details'>{{song.id}} {{song.name}} - {{song.genre}} - {{song.artist_name}}</span>
            </div>
         </div>
       </div>
 </div>
+ 
+  

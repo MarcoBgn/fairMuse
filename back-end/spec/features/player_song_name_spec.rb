@@ -11,7 +11,7 @@ feature 'displays song name' do
     upload_track('test song')
     sleep(3)
     click_link('Home')
-    click_button('Play test song')
+    find(:css, "img[id*='test song']").click
     expect(page).to have_css("#song-name", text: 'test song')
   end
 
