@@ -1,9 +1,18 @@
+$primary-color: #63A091;
+$secondary-color: #83b3a7;
+$light-text-color: #fff;
+
 .btn {
-  background-color: #63A091;
-  color: #fff;
+  background-color: $primary-color;
+  color: $light-text-color;
+}
+
+.btn:hover {
+  opacity: 0.75;
+  background-color: $secondary-color;
 }
 
 .stripe-button-el {
-  background-color: #63A091;
-  color: #fff;
+  background-color: $primary-color;
+  color: $light-text-color;
 }
