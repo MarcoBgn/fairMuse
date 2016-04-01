@@ -16,10 +16,10 @@
          </div>
       </div>
   </section>
-  
+
   <h3> What is trending now - contribute to shape music </h3>
-    
-    <div class='container'>
+
+    <div class='container' id="song_list">
       <div class='row center-block'>
        <div ng-repeat="song in player.songList | filter:player.query">
            <div class="track_container col-sm-4"> <img class='img_click' ng-click="player.changeSource(song.songId)" ng-src={{song.image}}><span class='song_details'>{{song.id}} {{song.name}} - {{song.genre}} - {{song.artist_name}}</span>

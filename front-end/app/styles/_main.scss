@@ -78,9 +78,18 @@ label {
   color: #555;
 }
 
+#song_list {
+  margin-bottom: 50px;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
+  padding-bottom: 30px;
+  position: relative;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
