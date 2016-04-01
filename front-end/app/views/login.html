@@ -4,15 +4,15 @@
   <flash:messages></flash:messages>
 </div>
 
-<form name="login_form" ng-submit="login.sendForm(email, password)">
+<form name="login_form" ng-submit="login.sendForm(email, password)" class="form-horizontal" role="form">
   <div class="form-group row">
-    <label for="email" class="col-sm-2 col-sm-offset-2 form-control-label">Email</label>
+    <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email</label>
     <div class="col-sm-6">
       <input type="email" class="form-control" name="email" ng-model="login.email">
     </div>
   </div>
   <div class="form-group row">
-    <label for="password" class="col-sm-2 col-sm-offset-2 form-control-label">Password</label>
+    <label for="password" class="col-sm-2 col-sm-offset-2 control-label">Password</label>
     <div class="col-sm-6">
       <input type="password" class="form-control" name="password" ng-model="login.password">
     </div>
