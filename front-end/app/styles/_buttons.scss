@@ -7,7 +7,7 @@ $light-text-color: #fff;
   color: $light-text-color;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   opacity: 0.75;
   background-color: $secondary-color;
   color: $light-text-color;

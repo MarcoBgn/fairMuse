@@ -10,7 +10,7 @@ $light-text-color: #fff;
   color: $light-text-color;
 }
 
-a.navbar-brand:hover {
+a.navbar-brand:hover, a.navbar-brand:focus {
   opacity: 0.75 !important;
   background-color: $secondary-color !important;
   color: $light-text-color !important;
@@ -24,7 +24,7 @@ a.navbar-brand:hover {
   color: $light-text-color;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   opacity: 0.75;
   background-color: $secondary-color;
   color: $light-text-color;
