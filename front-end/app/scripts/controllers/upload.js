@@ -8,7 +8,12 @@ fairMuse.controller('UploadCtrl', ['Upload', '$timeout', '$location','$window', 
       url: 'http://localhost:3000/tracks',
       data: {
         track: {
-          name: this.trackName, genre: this.genre, file: file, image: picfile, artist_id: localStorage.getItem('artist_id')
+          name: this.trackName,
+          genre: this.genre,
+          file: file,
+          image: picfile,
+          artist_id: localStorage.getItem('artist_id'),
+          artist_name: localStorage.getItem('name')
         }
       }
     });

@@ -15,6 +15,7 @@ fairMuse.controller('PlayerCtrl',
            genre: self.tracks[i].genre,
            image: self.tracks[i].image_url,
            artist_id: self.tracks[i].artist_id,
+           artist_name: self.tracks[i].artist_name,
            sources: [
              {
                src: $sce.trustAsResourceUrl(self.tracks[i].track_url),

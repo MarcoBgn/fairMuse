@@ -3,6 +3,8 @@
 <flash:messages>
 </div>
 <form name="signup_form" ng-submit="artist.sendSignUpForm(email, password, password_confirmation)">
+<label for="email">Artist Name</label>
+<input type="text" name="name" ng-model="artist.name">
 <label for="email">Email</label>
 <input type="email" name="email" ng-model="artist.email">
 <label for="password">Password</label>
