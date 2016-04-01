@@ -1,3 +1,7 @@
+.container-fluid {
+  padding: 0;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -40,8 +44,6 @@ img {
   left: 0px;
 }
 
-
-
 .center-block {
   text-align: center;
 }
@@ -60,8 +62,8 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+  border-bottom: 0;
+  margin-bottom: 0;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -102,6 +104,10 @@ label {
   padding: 0;
 }
 
+.carousel-inner {
+  background-color: #fff;
+}
+
 /* Main info message and sign up button */
 .jumbotron {
   text-align: center;
@@ -112,6 +118,10 @@ label {
     font-size: 21px;
     padding: 14px 24px;
   }
+}
+
+.jumbotron.front-hero {
+  padding: 0;
 }
 
 /* Supporting info content */
@@ -138,7 +148,7 @@ label {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {

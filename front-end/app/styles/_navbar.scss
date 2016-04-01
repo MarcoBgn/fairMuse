@@ -4,6 +4,8 @@ $light-text-color: #fff;
 
 .navbar-default {
   background-color: $primary-color;
+  margin-bottom: 0;
+  border: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -14,6 +16,10 @@ a.navbar-brand:hover, a.navbar-brand:focus {
   opacity: 0.75 !important;
   background-color: $secondary-color !important;
   color: $light-text-color !important;
+}
+
+button.navbar-toggle.collapsed:hover, button.navbar-toggle.collapsed:focus {
+  background-color: $secondary-color;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
