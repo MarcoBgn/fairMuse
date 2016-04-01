@@ -4,13 +4,14 @@
   <flash:messages></flash:messages>
 </div>
 
-<ul ng-repeat='song in player.songList'>
+<div>
+  <ul ng-repeat='song in player.songList'>
     <div ng-show="song.artist_id == artist.artistId">
       <li>{{song.name}}</li> <img ng-src='{{song.image}}'/>
     </div>
-</ul>
-
+  </ul>
 </div>
+
 <button id="Click" ng-click="artist.displayBalance()" class="btn">Update Balance</button>
 
-  <p>Current Balance: {{artist.balance.balance}}</p>
+<p>Current Balance: {{artist.balance.balance}}</p>
