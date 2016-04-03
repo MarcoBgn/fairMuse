@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+  pool: 5
+
+development:
+  <<: *default
+  database: back-end_development
+
+test:
+  <<: *default
+  database: back-end_test
+
+production:
+  <<: *default
+  database: back-end_production
+  username: back-end
+  password: <%= ENV['BACK-END_DATABASE_PASSWORD'] %>

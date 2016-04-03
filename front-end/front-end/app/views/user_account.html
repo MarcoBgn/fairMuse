@@ -1,0 +1,11 @@
+<div ng-include="'views/navbar.html'"></div>
+<h1>User Account<h1>
+  <div>
+  <flash:messages></flash:messages>
+  </div>
+<button id="Click" ng-click="user.displayStreamDetails()" class="btn">Click</button>
+
+<div ng-repeat="track in user.returnData">
+  <p>{{track.track_id}}: {{track.total_plays}}</p>
+</div>
+<button id="Pay" ng-click=user.pay() class="btn">Pay</button>

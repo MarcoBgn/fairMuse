@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.2.2
+env:
+  - TEST_DIR=back-end
+script:
+  - cd $TEST_DIR && bundle install && bundle exec rake db:create && bundle exec rake db:reset && bundle exec rspec
+

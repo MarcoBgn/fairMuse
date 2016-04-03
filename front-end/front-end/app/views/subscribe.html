@@ -1,0 +1,15 @@
+<center><h1> Thanks for supporting real artists with real money</h1>
+
+<form action="http://localhost:3000/charges" method="POST" class="form-horizontal" role="form">
+  <input type="hidden" input name="user_id" input value={{main.user}}>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+    data-image="/img/documentation/checkout/marketplace.png"
+    data-name="FairMuse"
+    data-description="FairMuse Subscription (£9 per month)"
+    data-panel-label="Subscribe"
+    data-label="Subscribe"
+    data-locale="auto">
+  </script>
+</form></center>

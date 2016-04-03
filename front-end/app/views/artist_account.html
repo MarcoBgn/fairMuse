@@ -1,19 +1,23 @@
 <div ng-include="'views/navbar.html'"></div>
-<h1>{{artist.artistName}}</h1>
+
+<div class="jumbotron front-hero">
+<div class='row center-block'><button id="Click" ng-click="artist.displayBalance()" class="btn"><div class='song_name'>Update Balance</button><br>Current Balance: {{artist.balance.balance}}</div>
+<h3>{{artist.artistName}}</h3>
 <div>
   <flash:messages></flash:messages>
 </div>
 
 <div class='container'>
-  <div class='row'>
+  <div class='row center-block'>
     <div ng-repeat='song in player.songList'>
-        <div class='col-sm-6' ng-show="song.artist_id == artist.artistId">
-          {{song.name}} <img ng-src='{{song.image}}'/>
+        
+        <div class='col-sm-4' ng-show="song.artist_id == artist.artistId">
+          <div class='row center-block'> <div class='song_name'> {{song.name}} </div><img ng-src='{{song.image}}'/></div>
         </div>
+    
     </div>
    </div>
 </div>
+</div>
 
-<button id="Click" ng-click="artist.displayBalance()" class="btn">Update Balance</button>
 
-<p>Current Balance: {{artist.balance.balance}}</p>
