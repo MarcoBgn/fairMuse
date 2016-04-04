@@ -7,13 +7,21 @@
 <div class='container'>
   <div class='row'>
     <div ng-repeat='song in player.songList'>
-        <div class='col-sm-6' ng-show="song.artist_id == artist.artistId">
-          {{song.name}} <img ng-src='{{song.image}}'/>
-        </div>
+      <div class='col-sm-6' ng-show="song.artist_id == artist.artistId">
+        <img ng-src='{{song.image}} img-responsive'/>
+        <span>{{song.name}}</span>
+      </div>
     </div>
-   </div>
+  </div>
 </div>
 
-<button id="Click" ng-click="artist.displayBalance()" class="btn">Update Balance</button>
-
-<p>Current Balance: {{artist.balance.balance}}</p>
+<div class="container" id="artist_balance">
+  <div class="row">
+    <div class='col-sm-3'>
+      <button id="Click" ng-click="artist.displayBalance()" class="btn">Update Balance</button>
+    </div>
+    <div class='col-sm-9'>
+      <p>Current Balance: {{artist.balance.balance}}</p>
+    </div>
+  </div>
+</div>

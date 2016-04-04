@@ -4,16 +4,22 @@ $light-text-color: #fff;
 
 .navbar-default {
   background-color: $primary-color;
+  margin-bottom: 0;
+  border: 0px;
 }
 
 .navbar-default .navbar-brand {
   color: $light-text-color;
 }
 
-a.navbar-brand:hover {
+a.navbar-brand:hover, a.navbar-brand:focus {
   opacity: 0.75 !important;
   background-color: $secondary-color !important;
   color: $light-text-color !important;
+}
+
+button.navbar-toggle.collapsed:hover, button.navbar-toggle.collapsed:focus {
+  background-color: $secondary-color;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -24,7 +30,7 @@ a.navbar-brand:hover {
   color: $light-text-color;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   opacity: 0.75;
   background-color: $secondary-color;
   color: $light-text-color;
