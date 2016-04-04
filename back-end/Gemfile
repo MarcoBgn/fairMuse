@@ -20,7 +20,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'responders', '~> 2.0'
 
-gem 'paperclip'
+gem "paperclip", "~> 3.5.3"
 
 gem 'aws-sdk', '< 2.0'
 
