@@ -9,6 +9,21 @@ img {
   max-width: 600px;
 }
 
+.carousel_img {
+  margin: auto;
+  height: 380px;
+  width: 780px;
+}
+
+.trending_text {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.tracks_text {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16px;
+}
+
 .footer {
   max-height: 250 px;
   position: fixed;
@@ -76,16 +91,15 @@ label {
   color: #555;
 }
 
+.short_field {
+  max-width: 150px;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
-}
-
-.search {
-  width: 350px;
-  height: 90px;
 }
 
 #search_bar {
@@ -126,7 +140,7 @@ label {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    width: 1250px;
   }
 
   /* Remove the padding we set earlier */

@@ -12,7 +12,7 @@
     <div ng-repeat='song in player.songList'>
         
         <div class='col-sm-4' ng-show="song.artist_id == artist.artistId">
-          <div class='row center-block'> <div class='song_name'> {{song.name}} </div><img ng-src='{{song.image}}'/></div>
+          <div class="track_container center-block"> <div class='song_name'> {{song.name}} </div><img class='img_click' ng-src='{{song.image}}'/></div>
         </div>
     
     </div>
