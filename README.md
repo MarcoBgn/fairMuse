@@ -5,11 +5,15 @@ A SPA Music streaming service that aims to distribute revenue fairly among artis
 This was created over two weeks as a final project for @Makers Academy (Ronin)
 by Yan-Yi Li, Marco Bagnasco, Mark Hill, Russell Vaughan and David Parry.
 
+## Screenshot
+
+![Image of Photos Page](http://i.imgur.com/p1HajgA.png)
+
 ## Overview of technologies used:
 
 -AngularJS frontend (SPA) with Rails API on the backend.
 
--Angular Player for music playback
+-Videogular Player for music playback
 
 -Amazon S3 for music storage. 'ng-file-upload' for Angular file uploads along with Paperclip on the backend.
 
@@ -20,11 +24,6 @@ by Yan-Yi Li, Marco Bagnasco, Mark Hill, Russell Vaughan and David Parry.
 ## Approach to development:
 
 The team used an agile development process that began with a product design sprint. After research an MVP was decided upon and storyboarded. Daily standups and pair programming were integral to the process. All code was test driven, including unit tests (Karma on the frontend, RSPEC on the backend) with full integration tests.
-
-## Screenshots
-
-![Image of Photos Page]
-http://i.imgur.com/p1HajgA.png
 
 ## Live Site
 
