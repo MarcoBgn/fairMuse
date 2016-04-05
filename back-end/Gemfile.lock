@@ -238,7 +238,7 @@ DEPENDENCIES
   database_cleaner
   devise
   jbuilder
-  paperclip
+  paperclip (~> 4.2)
   pg
   rack-cors
   rails (= 4.2.5.1)

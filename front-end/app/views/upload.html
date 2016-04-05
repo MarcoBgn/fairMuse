@@ -5,27 +5,27 @@
     <div class="form-group row">
       <label for="trackname" class="col-sm-2 col-sm-offset-2 control-label"> Track name: </label>
       <div class="col-sm-6">
-        <input type="text" class="form-control"name="trackname" ng-model="upload.trackName" size="31" required>
+        <input class='short_field' type="text" class="form-control"name="trackname" ng-model="upload.trackName" size="31" required>
         <i ng-show="fileUploadForm.trackname.$error.required" class="error">*required</i>
       </div>
     </div>
     <div class="form-group row">
       <label for="genre" class="col-sm-2 col-sm-offset-2 control-label"> Genre: </label>
       <div class="col-sm-6">
-        <input type="text" class="form-control"name="genre" ng-model="upload.genre" placeholder="What is your sound?" size="24">
+        <input class='short_field' type="text" class="form-control"name="genre" ng-model="upload.genre" placeholder="What is your sound?" size="24">
       </div>
     </div>
     <div class="form-group row">
       <label for="File" class="col-sm-2 col-sm-offset-2 control-label">Song:</label>
       <div class="col-sm-6">
-        <input type="file" ngf-select ng-model="audioFile" name="file" accept="audio/*" ngf-max-size="9MB" required ngf-model-invalid="errorFile">
+        <input class='short_field' type="file" ngf-select ng-model="audioFile" name="file" accept="audio/*" ngf-max-size="9MB" required ngf-model-invalid="errorFile">
         <i ng-show="fileUploadForm.file.$error.required" class="error">*required</i>
       </div>
     </div>
     <div class="form-group row">
      <label for="File" class="col-sm-2 col-sm-offset-2 control-label">Image:</label>
      <div class="col-sm-6">
-      <input type="file" ngf-select ng-model="picFile" name="picfile" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorImage">
+      <input class='short_field' type="file" ngf-select ng-model="picFile" name="picfile" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorImage">
       <i ng-show="fileUploadForm.file.$error.maxSize" class="error">File too large
         {{errorFile.size / 1000000|number:1}}MB: max 9MB</i>
         <i ng-show="fileUploadForm.file.$error.maxSize" class="error">File too large
