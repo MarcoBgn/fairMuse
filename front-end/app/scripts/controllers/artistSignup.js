@@ -6,11 +6,11 @@ angular.module('fairMuseApp')
     var artistId;
     var location;
     location = $location
-    
+
     this.artistId = localStorage.getItem('artist_id')
     this.artistName = localStorage.getItem('name')
 
-    self.sendSignUpForm = function(email, password) {
+    self.sendSignUpForm = function() {
        self.artistInfo = {name: self.name,
                     email: self.email,
                     password: self.password,
@@ -24,7 +24,7 @@ angular.module('fairMuseApp')
       localStorage.setItem('artist_id', response.data.artist_id);
       localStorage.setItem('is_artist', response.data.is_artist);
       localStorage.setItem('name', response.data.name);
-      
+
       location.path('/artistaccount')
       };
 

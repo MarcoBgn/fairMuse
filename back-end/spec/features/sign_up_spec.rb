@@ -1,13 +1,5 @@
 feature 'Sign up' do
 
-  before(:each) do
-    page.execute_script("window.localStorage.clear()")
-  end
-
-  after(:each) do
-    page.execute_script("window.localStorage.clear()")
-  end
-
   scenario 'allows a user to sign up', js: true do
     visit 'http://localhost:9000/'
     click_link('Sign up')
@@ -16,6 +8,8 @@ feature 'Sign up' do
     fill_in 'password_confirmation', with: '12345678'
     click_button('Sign up')
     expect(page).to have_content('Subscribe')
+    visit 'http://localhost:9000/'
+    find(:css, "#log_out").click
   end
 
   scenario 'does not allow a user to sign up with same email twice', js: true do

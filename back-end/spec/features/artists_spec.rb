@@ -8,7 +8,6 @@ feature 'artists can sign up' do
   scenario 'an artist can sign up', js: true do
     visit 'http://localhost:9000/'
     click_link('Artists Sign Up')
-    expect(current_url).to eq('http://localhost:9000/#/artistsignup')
     fill_in 'email', with: 'email@gmail.com'
     fill_in 'password', with: '12345678'
     fill_in 'password_confirmation', with: '12345678'
