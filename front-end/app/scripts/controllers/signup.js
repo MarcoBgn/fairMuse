@@ -13,34 +13,27 @@ angular.module('fairMuseApp')
                        name: self.username
                      };
       if(self.user){var promise = signupService.signup(self.userInfo);
-      promise.then(success_user, error_user);
+      promise.then(success, error);
+      location.path('/subscribe');
     }else{
       var promise = signupService.artistSignup(self.userInfo);
-     promise.then(success_artist, error_artist);
+     promise.then(success, error);
+     location.path('/artistaccount');
     }
 
     };
+    var success = function(response){
+    localStorage.setItem('auth_token', response.data.auth_token);
+    localStorage.setItem('artist_id', response.data.artist_id);
+    localStorage.setItem('user_id', response.data.user_id);
+    localStorage.setItem('is_artist', response.data.is_artist);
+    localStorage.setItem('is_user', response.data.is_user);
+    localStorage.setItem('name', response.data.name);
+    localStorage.setItem('bannana', response.data.bannana)
+    };
 
-      var success_user = function(response){
-        localStorage.setItem('auth_token', response.data.auth_token);
-        localStorage.setItem('user_id', response.data.user_id);
-        localStorage.setItem('is_user', response.data.is_user);
-        location.path('/subscribe');
-      };
-
-      var error_user = function(response) {
+      var error = function(response) {
         flash(response.data.messages);
      };
-     var success_artist = function(response){
-     localStorage.setItem('auth_token', response.data.auth_token);
-     localStorage.setItem('artist_id', response.data.artist_id);
-     localStorage.setItem('is_artist', response.data.is_artist);
-     localStorage.setItem('name', response.data.name);
 
-     location.path('/artistaccount')
-     };
-
-     var error_artist = function(response) {
-       flash('Sign up failed!');
-    };
 });
