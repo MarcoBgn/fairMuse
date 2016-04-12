@@ -1,25 +1,24 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
-    account_creation ? success_message : failure_message
+    user = new_account
+    user.save ? success_message(user) : failure_message(user)
   end
 
   private
-  def account_creation
+  def new_account
     if params[:user]
-      user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
-      return user.save
+      return User.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     else
-      artist = Artist.new(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
-      return artist.save
-    token = user.ensure_authentication_token
-    render json: {auth_token: token, user_id: user.id, is_user: params[:user], is_artist: !params[:user]}
-  else
-    render json: {messages: user.errors.full_messages}, status: 422
+      return Artist.new(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+    end
   end
 
-  def success_message
+  def success_message(user)
+    token = user.ensure_authentication_token
+    render json: {auth_token: token, user_id: user.id, is_user: params[:user], is_artist: !params[:user]}
   end
-  def failure_message
+  def failure_message(user)
+    render json: {messages: user.errors.full_messages}, status: 422
   end
 end
