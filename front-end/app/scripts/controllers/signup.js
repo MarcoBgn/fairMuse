@@ -13,14 +13,10 @@ angular.module('fairMuseApp')
                        name: self.username,
                        user: self.user
                      };
-      if(self.user){var promise = signupService.signup(self.userInfo);
+      var promise = signupService.signup(self.userInfo);
       promise.then(success, error);
-    }else{
-      var promise = signupService.artistSignup(self.userInfo);
-     promise.then(success, error);
-    }
-
     };
+
     var success = function(response){
     localStorage.setItem('auth_token', response.data.auth_token);
     localStorage.setItem('artist_id', response.data.artist_id);

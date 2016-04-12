@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   as :user do
     post '/api/artistlogin' => 'artistsessions#create'
     delete '/api/artistlogout' => 'artistsessions#destroy'
-    post '/api/artistsignup' => 'artistreg#create'
     post '/api/signup' => 'registrations#create'
     post '/api/login' => 'sessions#create'
     delete '/api/logout' => 'sessions#destroy'
