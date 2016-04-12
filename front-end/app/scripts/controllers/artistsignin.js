@@ -1,5 +1,5 @@
 angular.module('fairMuseApp')
-.controller('ArtistSigninCtrl', function(authenticationService, flash, $location) {
+.controller('ArtistSigninCtrl', function(authenticationService, localStorageService, flash, $location) {
   var self = this;
   var artist, email, password, authenticationService, response, location;
   location = $location;
@@ -14,13 +14,7 @@ angular.module('fairMuseApp')
     };
 
     var success = function(response){
-      console.log(response.data);
-      localStorage.setItem('auth_token', response.data.auth_token);
-      localStorage.setItem('artist_id', response.data.artist_id);
-      localStorage.setItem('is_artist', response.data.is_artist);
-      localStorage.setItem('name', response.data.name);
-      
-      location.path('/artistaccount')
+    localStorageService.setLocalStorage(response);
     };
 
     var error = function(response) {
