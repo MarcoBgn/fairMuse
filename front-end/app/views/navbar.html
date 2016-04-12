@@ -17,8 +17,8 @@
         <ul class="nav navbar-nav">
           <li><a href="#/" >Home</a></li>
           <li ng-show='!index.isArtist'><a ng-href="#/about">About</a></li>
-          <li ng-show="index.isUser"><a ng-href="#/useraccount">Account</a></li>
-          <li ng-show="index.isArtist"><a ng-href="#/artistaccount">Account</a></li>
+          <li ng-show="index.isUser=='true'"><a ng-href="#/useraccount">Account</a></li>
+          <li ng-show="index.isArtist=='true'"><a ng-href="#/artistaccount">Account</a></li>
           <li ng-show="index.isArtist"><a ng-href="#/upload">Upload Sound</a></li>
           <li ng-show='!index.LoggedIn'><a ng-href="#/signup">Sign up</a></li>
           <li ng-show='!index.LoggedIn'><a ng-href="#/login">Log in</a></li>

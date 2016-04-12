@@ -7,7 +7,7 @@ feature 'payments for artists are calculated' do
     Artist.create(id:1, email: "name@email.com", password:"12345678", balance: 0)
     Artist.create(id:2, email: "name2@email.com", password:"12345678", balance: 0)
   end
-  
+
   scenario 'does not have play count by default', js: true do
     visit 'http://localhost:9000/'
     log_in
