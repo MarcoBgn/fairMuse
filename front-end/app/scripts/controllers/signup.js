@@ -10,15 +10,14 @@ angular.module('fairMuseApp')
       self.userInfo = {email: self.email,
                        password: self.password,
                        password_confirmation: self.password_confirmation,
-                       name: self.username
+                       name: self.username,
+                       user: self.user
                      };
       if(self.user){var promise = signupService.signup(self.userInfo);
       promise.then(success, error);
-      location.path('/subscribe');
     }else{
       var promise = signupService.artistSignup(self.userInfo);
      promise.then(success, error);
-     location.path('/artistaccount');
     }
 
     };
@@ -29,6 +28,11 @@ angular.module('fairMuseApp')
     localStorage.setItem('is_artist', response.data.is_artist);
     localStorage.setItem('is_user', response.data.is_user);
     localStorage.setItem('name', response.data.name);
+    if(self.user){
+      location.path('/subscribe')
+    }else{
+      location.path('/artistaccount')
+    }
     };
 
       var error = function(response) {
