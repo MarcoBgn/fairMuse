@@ -29,7 +29,6 @@ angular.module('fairMuseApp')
     localStorage.setItem('is_artist', response.data.is_artist);
     localStorage.setItem('is_user', response.data.is_user);
     localStorage.setItem('name', response.data.name);
-    localStorage.setItem('bannana', response.data.bannana)
     };
 
       var error = function(response) {
