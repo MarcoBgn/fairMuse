@@ -10,8 +10,8 @@ angular.module('fairMuseApp')
 
     self.sendForm = function(email, password) {
       self.userInfo = {email: self.email,
-                   password: self.password,
-                   user: self.user};
+                       password: self.password,
+                       user: self.user};
       var promise = authenticationService.login(self.userInfo);
       promise.then(success, error);
     };
