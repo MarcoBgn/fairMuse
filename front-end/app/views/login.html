@@ -4,11 +4,11 @@
   <flash:messages></flash:messages>
 </div>
 <ul class="nav nav-tabs">
-  <li ng-click="login.user=false" class="artist_tab"><h4>Artist</h4></li>
-  <li ng-click="login.user=true" class="user_tab"><h4>User</h4></li>
+  <li ng-click="login.user_tab=false" class="artist_tab"><h4>Artist</h4></li>
+  <li ng-click="login.user_tab=true" class="user_tab"><h4>User</h4></li>
 </ul>
 
-<div ng-show="login.user">
+<div ng-show="login.user_tab">
 <h2>User Log-In</h2>
 <form name="login_form" ng-submit="login.sendForm(email, password)" class="form-horizontal" role="form">
   <div class="form-group row">
@@ -31,7 +31,7 @@
 </form>
 </div>
 
-<div ng-show="!login.user">
+<div ng-show="!login.user_tab">
 <h2>Artist Log-In</h2>
 <form name="login_form" ng-submit="login.sendForm(email, password)" class="form-horizontal" role="form">
 <div class="form-group row">

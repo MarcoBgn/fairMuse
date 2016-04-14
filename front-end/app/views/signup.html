@@ -4,11 +4,11 @@
   <flash:messages></flash:messages>
 </div>
 <ul class="nav nav-tabs">
-  <li ng-click="signup.user=false" class='artist_tab'><h4>Artist</h4></li>
-  <li ng-click="signup.user=true" class='user_tab'><h4>User</h4></li>
+  <li ng-click="signup.user_tab=false" class='artist_tab'><h4>Artist</h4></li>
+  <li ng-click="signup.user_tab=true" class='user_tab'><h4>User</h4></li>
 </ul>
 
-<div ng-show="signup.user">
+<div ng-show="signup.user_tab">
 <form name="signup_form" ng-submit="signup.sendForm()" class="form-horizontal" role="form">
   <div class="form-group row">
     <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email</label>
@@ -37,7 +37,7 @@
 </form>
 </div>
 
-<div ng-show="!signup.user">
+<div ng-show="!signup.user_tab">
 <form name="signup_form" ng-submit="signup.sendForm()" class="form-horizontal" role="form">
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-sm-offset-2 control-label">Artist Name</label>
