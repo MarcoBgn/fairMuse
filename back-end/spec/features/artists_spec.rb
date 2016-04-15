@@ -8,10 +8,12 @@ feature 'artists can sign up' do
   scenario 'an artist can sign up', js: true do
     visit 'http://localhost:9000/'
     click_link('Sign up')
+    sleep(2)
     fill_in 'email', with: 'email@gmail.com'
     fill_in 'password', with: '12345678'
     fill_in 'password_confirmation', with: '12345678'
     click_button('Sign up')
+    sleep(2)
     expect(page).to have_content('Log out')
     find(:css, "#log_out").click
   end
