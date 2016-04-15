@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fairMuseApp')
-  .controller('LoginCtrl', function(authenticationService, flash, $location) {
+  .controller('LoginCtrl', function(authenticationService, localStorageService, flash, $location) {
     var self = this;
     var user, email, password, authenticationService, response, location;
     location = $location;
@@ -9,18 +9,16 @@ angular.module('fairMuseApp')
     self.password = "";
 
     self.sendForm = function(email, password) {
-      self.user = {email: self.email,
-                   password: self.password};
-      var promise = authenticationService.login(self.user);
+      self.userInfo = {email: self.email,
+                       password: self.password,
+                       user: self.user};
+      var promise = authenticationService.login(self.userInfo);
       promise.then(success, error);
     };
 
       var success = function(response){
-      localStorage.setItem('auth_token', response.data.auth_token);
-      localStorage.setItem('user_id', response.data.user_id);
-      localStorage.setItem('is_user', response.data.is_user);
-      location.path('/songs');
-      };
+      localStorageService.setLocalStorage(response);
+    };
 
       var error = function(response) {
         flash('error', 'Wrong Login Credentials!');

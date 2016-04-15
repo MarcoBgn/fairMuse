@@ -1,8 +1,8 @@
 'use strict';
 
 fairMuse.controller('UploadCtrl', ['Upload', '$timeout', '$location','$window', function (Upload, $timeout, $location, $window) {
-  var $location = $location
-  var $window = $window
+  var $location = $location;
+  var $window = $window;
   this.uploadSong = function(file, picfile) {
     file.upload = Upload.upload({
       url: 'http://localhost:3000/tracks',
@@ -12,7 +12,7 @@ fairMuse.controller('UploadCtrl', ['Upload', '$timeout', '$location','$window', 
           genre: this.genre,
           file: file,
           image: picfile,
-          artist_id: localStorage.getItem('artist_id'),
+          artist_id: localStorage.getItem('user_id'),
           artist_name: localStorage.getItem('name')
         }
       }
@@ -28,7 +28,7 @@ fairMuse.controller('UploadCtrl', ['Upload', '$timeout', '$location','$window', 
       if(response.status > 0)
         this.errorMsg = response.status + ': ' + response.data;
     }, function(evt) {
-      file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total)); 
+      file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
     });
   };
 }]);

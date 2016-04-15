@@ -18,10 +18,10 @@ class Stream < ActiveRecord::Base
     end
 
     tracks_played.each_with_index do |track, index|
-       artist_id = Track.find_by(id: track).artist_id
-       artist = Artist.find_by(id: artist_id)
-       new_balance = artist.balance + payments[index]
-       artist.update(balance: new_balance)
-    end
-  end
+     artist_id = Track.find_by(id: track).artist_id
+     artist = Artist.find_by(id: artist_id)
+     new_balance = artist.balance + payments[index]
+     artist.update(balance: new_balance)
+   end
+ end
 end
