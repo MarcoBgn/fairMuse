@@ -14,8 +14,8 @@ feature 'Play Uploaded Music' do
     upload_track
     sleep(3)
     click_link('Home')
-    click_button('Play default track')
-    expect(page).to have_content('Play default track')
+    find(:css, "#track_1").click
+    expect(page).to have_content('default track')
     sleep(3)
   end
 end
