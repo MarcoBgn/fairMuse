@@ -6,7 +6,7 @@ fairMuse.controller('ModalCtrl',['$uibModal', function($uibModal){
    	var modalInstance = $uibModal.open({
    		animation: this.animationsEnabled,
    		templateUrl: 'views/'+ template,
-   		controller: controller
+   		controller: controller 
    	})
    }
 }]);

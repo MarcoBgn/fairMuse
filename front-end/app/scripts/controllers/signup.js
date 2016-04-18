@@ -1,10 +1,14 @@
 'use strict';
 
 angular.module('fairMuseApp')
-  .controller('SignupCtrl', function(signupService, flash, $location) {
+  .controller('SignupCtrl', function(signupService, flash, $location, $uibModalInstance) {
     var self = this;
     var location;
     location = $location;
+    
+    self.cancel_it = function() {
+      $uibModalInstance.close();
+    }
 
     self.sendForm = function(email, password) {
       self.userInfo = {email: self.email,

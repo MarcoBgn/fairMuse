@@ -1,11 +1,15 @@
 'use strict';
 
 angular.module('fairMuseApp')
-  .controller('ArtistCtrl', function(signupService, flash, $location, $http, $window) {
+  .controller('ArtistCtrl', function(signupService, flash, $location, $http, $window, $uibModalInstance) {
     var self = this
     var artistId;
     var location;
     location = $location
+    
+    self.cancel_it = function() {
+      $uibModalInstance.close();
+    }
     
     this.artistId = localStorage.getItem('artist_id')
     this.artistName = localStorage.getItem('name')
