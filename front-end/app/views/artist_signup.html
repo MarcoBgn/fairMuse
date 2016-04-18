@@ -3,29 +3,29 @@
   <flash:messages></flash:messages>
 </div>
 
-<form name="signup_form" ng-submit="artist.sendSignUpForm(email, password, password_confirmation)" class="form-horizontal" role="form">
+<form name="signup_form" ng-submit="artistSignup.sendSignUpForm(email, password, password_confirmation)" class="form-horizontal" role="form">
   <div class="form-group row">
     <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Artist Name</label>
     <div class="col-sm-6">
-      <input class='short_field' type="text" class="form-control" name="name" ng-model="artist.name">
+      <input class='short_field' type="text" class="form-control" name="name" ng-model="artistSignup.name">
     </div>
   </div>
   <div class="form-group row">
     <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email</label>
     <div class="col-sm-6">
-      <input class='short_field' type="email" class="form-control" name="email" ng-model="artist.email">
+      <input class='short_field' type="email" class="form-control" name="email" ng-model="artistSignup.email">
     </div>
   </div>
   <div class="form-group row">
     <label for="password" class="col-sm-2 col-sm-offset-2 control-label">Password</label>
     <div class="col-sm-6">
-      <input class='short_field' type="password" class="form-control" name="password" ng-model="artist.password">
+      <input class='short_field' type="password" class="form-control" name="password" ng-model="artistSignup.password">
     </div>
   </div>
   <div class="form-group row">
     <label for="password_confirmation" class="col-sm-2 col-sm-offset-2 control-label">Password Confirmation</label>
     <div class="col-sm-6">
-      <input class='short_field' type="password" class="form-control" name="password_confirmation" ng-model="artist.password_confirmation">
+      <input class='short_field' type="password" class="form-control" name="password_confirmation" ng-model="artistSignup.password_confirmation">
     </div>
   </div>
   <div class="form-group row">

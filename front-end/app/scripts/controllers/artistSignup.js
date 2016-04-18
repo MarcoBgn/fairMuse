@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fairMuseApp')
-  .controller('ArtistCtrl', function(signupService, flash, $location, $http, $window, $uibModalInstance) {
+  .controller('ArtistSignUpCtrl', function(signupService, flash, $location, $http, $window, $uibModalInstance) {
     var self = this
     var artistId;
     var location;
@@ -36,21 +36,5 @@ angular.module('fairMuseApp')
         flash('Sign up failed!');
      };
 
-     self.displayBalance = function(){
-           var promise = self.getBalance();
-           promise.then(balanceSuccess, balanceError);
-         };
-
-     self.getBalance = function(){
-       return $http.post('http://localhost:3000/api/balanceinfo', {artist_id: localStorage.getItem('artist_id')})
-   };
-
-   var balanceSuccess = function(response){
-     console.log(response.data);
-     self.balance = response.data
-   };
-
-   var balanceError = function(response) {
-   flash('Wrong!');
-   };
+  
 });

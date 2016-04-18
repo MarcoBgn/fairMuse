@@ -18,7 +18,7 @@
           <li><a href="#/" >Home</a></li>
           <li ng-show='!index.isArtist'><a ng-href="#/about">About</a></li>
           <li ng-controller='ModalCtrl as modal'>
-            <a ng-show="!index.LoggedIn" ng-click="modal.open('artist_signup.html', 'ArtistCtrl as artist')">Artists Sign Up</a>
+            <a ng-show="!index.LoggedIn" ng-click="modal.open('artist_signup.html', 'ArtistSignUpCtrl as artistSignup')">Artists Sign Up</a>
           </li>
           <li ng-controller='ModalCtrl as modal'>
             <a ng-show="!index.LoggedIn" ng-click="modal.open('artist_signin.html', 'ArtistSigninCtrl as artistSignin')">Artist Sign In</a>
