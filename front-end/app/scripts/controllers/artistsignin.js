@@ -1,5 +1,5 @@
 angular.module('fairMuseApp')
-.controller('ArtistSigninCtrl', function(authenticationService, flash, $location, $uibModalInstance) {
+.controller('ArtistSigninCtrl', function(authenticationService, flash, $location) {
   var self = this;
   var artist, email, password, authenticationService, response, location;
   location = $location;
@@ -11,7 +11,6 @@ angular.module('fairMuseApp')
                    password: self.password}
       var promise = authenticationService.artistLogin(self.artist);
       promise.then(success, error);
-      $uibModalInstance.close();
     };
 
     var success = function(response){
