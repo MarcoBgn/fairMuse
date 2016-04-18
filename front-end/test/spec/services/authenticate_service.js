@@ -1,5 +1,5 @@
 describe('Service: authenticationService', function(){
-  var location,params,httpBackend,authenticationService, localStorage, $window, token;
+  var location, params, httpBackend, authenticationService, localStorage, $window, token;
 
   beforeEach(function(){
     

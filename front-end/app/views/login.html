@@ -3,7 +3,7 @@
   <flash:messages></flash:messages>
 </div>
 
-<form name="login_form" ng-submit="login.sendForm(email, password)" class="form-horizontal" role="form">
+<form ng-controller='LoginCtrl as login' name="login_form" ng-submit="login.sendForm(email, password)" class="form-horizontal" role="form">
   <div class="form-group row">
     <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email</label>
     <div class="col-sm-6">
