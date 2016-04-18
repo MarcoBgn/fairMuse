@@ -25,7 +25,7 @@
         localStorage.removeItem("auth_token");
         localStorage.removeItem("user_id");
         localStorage.removeItem("is_user");
-        $location.path("/");
+        $location.path("/views/main.html");
       });
     }
       this.bob = function(){
@@ -34,7 +34,7 @@
           localStorage.removeItem("auth_token");
           localStorage.removeItem("artist_id");
           localStorage.removeItem("is_artist");
-          $location.path("/");
+          $location.path("/views/main.html");
         });
       }
 
