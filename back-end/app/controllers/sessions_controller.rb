@@ -6,7 +6,7 @@ class SessionsController < Devise::SessionsController
     user = get_user
     if user && user.valid_password?(params[:password])
       token = user.ensure_authentication_token
-      render json: {auth_token: token, user_id: user.id, is_user: params[:user], is_artist: !params[:user]}
+      render json: {auth_token: token, user_id: user.id, name: user.name, is_subscriber: Role.check_subscriber(user.id), is_artist: Role.check_subscriber(user.id)}
     else
       render nothing: true, status: :unauthorized
     end
@@ -24,11 +24,7 @@ class SessionsController < Devise::SessionsController
 
   private
   def get_user
-    if params[:user]
-      return User.find_for_database_authentication(email: params[:email])
-    else
-      return Artist.find_for_database_authentication(email: params[:email])
-    end
+    User.find_for_database_authentication(email: params[:email])
   end
 
 

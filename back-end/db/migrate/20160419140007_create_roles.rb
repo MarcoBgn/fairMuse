@@ -3,8 +3,8 @@ class CreateRoles < ActiveRecord::Migration
     create_table :roles do |t|
       t.belongs_to :user
       t.timestamps null: false
-      t.boolean :artist
-      t.boolean :subscriber
+      t.boolean :artist, default: true
+      t.boolean :subscriber, default: false
     end
     add_index :roles, :user_id, :unique => true
   end
