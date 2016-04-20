@@ -12,6 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def success_message(user)
     role = Role.create(user_id: user.id)
+    p "=======#{role}====#{role.user_id}"
     token = user.ensure_authentication_token
     render json: {auth_token: token, name:user.name, user_id: user.id, is_subscriber: role.subscriber, is_artist: role.artist}
   end
