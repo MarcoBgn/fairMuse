@@ -6,6 +6,12 @@
 
 <form name="signup_form" ng-submit="signup.sendForm()" class="form-horizontal" role="form">
   <div class="form-group row">
+    <div class="form-group row">
+      <label for="name" class="col-sm-2 col-sm-offset-2 control-label">Name</label>
+     <div class="col-sm-6">
+       <input class='short_field' type="text" class="form-control" name="name" ng-model="signup.username">
+     </div>
+   </div>
     <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email</label>
     <div class="col-sm-6">
       <input class='short_field' type="email" class="form-control" name="email" ng-model="signup.email">
