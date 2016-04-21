@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :streams, dependent: :destroy
+  has_one :role, dependent: :destroy
+
   def ensure_authentication_token
     self.authentication_token = generate_authentication_token
     self.save!
@@ -17,5 +20,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  has_many :streams, dependent: :destroy
 end

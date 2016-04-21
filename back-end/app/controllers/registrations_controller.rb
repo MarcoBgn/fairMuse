@@ -7,11 +7,11 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
   def new_account
-      return User.new(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+    User.new(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
   end
 
   def success_message(user)
-    role = Role.create(user_id: user.id)
+    role = user.create_role
     token = user.ensure_authentication_token
     render json: {auth_token: token, name:user.name, user_id: user.id, is_subscriber: role.subscriber, is_artist: role.artist}
   end

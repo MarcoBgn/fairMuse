@@ -16,7 +16,6 @@ class Stream < ActiveRecord::Base
     payments = individual_track_plays.map do |plays|
       plays.to_f/user_weekly_plays * 100
     end
-
     tracks_played.each_with_index do |track, index|
      artist_id = Track.find_by(id: track).artist_id
      artist = Artist.find_by(id: artist_id)

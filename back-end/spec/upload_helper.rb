@@ -1,7 +1,8 @@
 def create_track_with_file(name="default")
 	Track.create(name: name,
                genre: "Electro",
-               file: fixture_file_upload("testsong.mp3", 'audio/mpeg'))
+               file: fixture_file_upload("testsong.mp3", 'audio/mpeg'),
+               artist_id: 1)
 end
 
 def create_track_with_file_and_image(name="default")

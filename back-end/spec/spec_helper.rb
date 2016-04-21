@@ -3,6 +3,7 @@ require "payments_helper"
 require "upload_helper"
 require "login_helper"
 require 'coveralls'
+require 'support/controller_helpers'
 
 Coveralls.wear!
 
@@ -10,7 +11,8 @@ Capybara.default_driver = :rack_test
 RSpec.configure do |config|
   config.include Paperclip::Shoulda::Matchers
   config.include ActionDispatch::TestProcess
-
+  config.include Devise::TestHelpers, :type => :controller
+  config.include ControllerHelpers, :type => :controller
   config.before(:suite) do
     DatabaseCleaner[:active_record].clean_with(:truncation)
   end
