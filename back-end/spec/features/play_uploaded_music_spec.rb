@@ -14,7 +14,7 @@ feature 'Play Uploaded Music' do
     artist_log_in('artyartison@gmail.com', '12345678')
     upload_track
     sleep(3)
-    click_link('Home')
+    visit 'http://localhost:9000/'
     find(:css, "#track_1").click
     expect(page).to have_content('default track')
     sleep(3)

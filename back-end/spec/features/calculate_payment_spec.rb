@@ -60,15 +60,20 @@ feature 'payments for artists are calculated' do
     log_in
     visit 'http://localhost:9000/'
     find(:css, "#track_1").click
+    visit 'http://localhost:9000/'
     find(:css, "#track_1").click
+    visit 'http://localhost:9000/'
     find(:css, "#track_2").click
+    visit 'http://localhost:9000/'
     find(:css, "#track_3").click
     click_link('Account')
     click_button('Pay')
+    sleep(2)
     find(:css, "#log_out").click
     artist_log_in
     click_link('Account')
     click_button('Click')
+    sleep(2)
     expect(page).to have_content('Current Balance: 75')
     find(:css, "#log_out").click
   end

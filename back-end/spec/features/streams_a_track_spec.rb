@@ -1,8 +1,13 @@
 feature 'Tracks the number of plays a song has' do
   before do
-    User.create(email: 'admin@gmail.com', password: '12345678')
-    Track.create(id:1, name: "default song", artist_id:1, file: fixture_file_upload("testsong.mp3", 'audio/mpeg'))
-    Track.create(id:2, name: "default song2", artist_id:2, file: fixture_file_upload("testsong.mp3", 'audio/mpeg'))
+    listener = User.create(email: 'admin@gmail.com', password: '12345678')
+    role = listener.create_role
+    artist_1 = User.create(id:2, email: "artist@email.com", password:"12345678")
+    artist_1.create_role(artist: true)
+    artist_2 = User.create(id:3, email: "artist2@email.com", password:"12345678")
+    artist_2.create_role(artist: true)
+    Track.create(id:1, name: "default song", artist_id:2, file: fixture_file_upload("testsong.mp3", 'audio/mpeg'))
+    Track.create(id:2, name: "default song2", artist_id:3, file: fixture_file_upload("testsong.mp3", 'audio/mpeg'))
   end
 
   after(:each) do
