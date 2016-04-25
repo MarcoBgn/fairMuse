@@ -3,6 +3,7 @@ require 'coveralls'
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
   add_filter "/features/"
+  add_filter "helper"
 end
 require "rails_helper"
 require "payments_helper"
