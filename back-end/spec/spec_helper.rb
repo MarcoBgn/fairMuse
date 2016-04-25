@@ -1,8 +1,13 @@
+require 'simplecov'
+require 'coveralls'
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start do
+  add_filter 'spec/features'
+end
 require "rails_helper"
 require "payments_helper"
 require "upload_helper"
 require "login_helper"
-require 'coveralls'
 require 'support/controller_helpers'
 
 Coveralls.wear!
