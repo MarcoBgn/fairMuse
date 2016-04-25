@@ -11,11 +11,8 @@
     this.LogOut = function(){
       var promise = authenticationService.LogOut();
       promise.then(function(){
-        localStorage.removeItem("auth_token");
-        localStorage.removeItem("user_id");
-        localStorage.removeItem("is_user");
-        localStorage.removeItem("is_artist")
-        $location.path("/login");
+        localStorage.clear()
+        $location.path("#/");
       });
     }
 

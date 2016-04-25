@@ -9,7 +9,7 @@ class SessionsController < Devise::SessionsController
       role = user.role
       render json: {auth_token: token, user_id: user.id, name: user.name, is_subscriber: role.subscriber, is_artist: role.artist}
     else
-      render nothing: true, status: :unauthorized
+      render json: {messages: "Sign In Failed"}, status: 422
     end
   end
 

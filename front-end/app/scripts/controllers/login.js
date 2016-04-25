@@ -8,7 +8,7 @@ angular.module('fairMuseApp')
     self.email = "";
     self.password = "";
 
-    self.sendForm = function(email, password) {
+    self.sendFormSignin = function(email, password) {
       self.userInfo = {email: self.email,
                        password: self.password,
                        user: self.user};

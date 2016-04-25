@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20160419152754) do
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.boolean  "artist",     default: true
+    t.boolean  "artist",     default: false
     t.boolean  "subscriber", default: false
   end
 

@@ -21,7 +21,7 @@ describe "POST #create" do
     it "allows login" do
         post :create, valid_attributes
         token = User.last.authentication_token
-        expected = {auth_token: token, user_id: 1, name: "name", is_subscriber: false, is_artist: true}.to_json
+        expected = {auth_token: token, user_id: 1, name: "name", is_subscriber: false, is_artist: false}.to_json
         response.body.should == expected
       end
     end

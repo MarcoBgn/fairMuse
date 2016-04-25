@@ -1,19 +1,27 @@
 'use strict';
 
 angular.module('fairMuseApp')
-  .controller('SignupCtrl', function(signupService, localStorageService, flash, $location) {
+  .controller('AccountCtrl', function(authenticationService, signupService, localStorageService, flash, $location) {
     var self = this;
     var location;
     location = $location;
 
-    self.sendForm = function() {
+    self.sendFormSignup = function() {
       self.userInfo = {email: self.email,
                        password: self.password,
                        password_confirmation: self.password_confirmation,
                        name: self.username,
-                       user: self.user
+                       artist: self.artist
                      };
       var promise = signupService.signup(self.userInfo);
+      promise.then(success, error);
+    };
+
+    self.sendFormSignin = function() {
+      self.userInfo = {email: self.email,
+                       password: self.password
+                       };
+      var promise = authenticationService.login(self.userInfo);
       promise.then(success, error);
     };
 

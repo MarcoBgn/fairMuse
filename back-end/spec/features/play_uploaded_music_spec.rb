@@ -1,7 +1,8 @@
 feature 'Play Uploaded Music' do
 
   before do
-    Artist.create(email: 'artyartison@gmail.com', password: '12345678')
+    artist = User.create(email: 'artyartison@gmail.com', password: '12345678')
+    artist.create_role(artist: true)
     visit 'http://localhost:9000/'
   end
 
