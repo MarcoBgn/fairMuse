@@ -26,7 +26,7 @@ var fairMuse = angular
     },
     responseError: function(response) {
       if (response.status === 401) {
-        $location.path('/login');
+        $location.path('/');
       }
       return $q.reject(response);
     }
@@ -44,20 +44,20 @@ var fairMuse = angular
     controller: 'MainCtrl',
     controllerAs: 'main'
   })
-  .when('/artistsignup',{
-    templateUrl: 'views/artist_signup.html',
-    controller: 'ArtistCtrl',
-    controllerAs: 'artist'
-  })
-  .when('/artistsignin',{
-    templateUrl: 'views/artist_signin.html',
-    controller: 'ArtistSigninCtrl',
-    controllerAs: 'artistSignin'
-  })
   .when('/about', {
     templateUrl: 'views/about.html',
     controller: 'AboutCtrl',
     controllerAs: 'about'
+  })
+  .when('/artist', {
+    templateUrl: 'views/artist.html',
+    controller: 'AccountCtrl',
+    controllerAs: 'account'
+  })
+  .when('/listener',{
+    templateUrl: 'views/listener.html',
+    controller: 'AccountCtrl',
+    controllerAs: 'account'
   })
   .when('/success', {
     templateUrl: 'views/success.html',

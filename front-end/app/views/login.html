@@ -1,25 +1,26 @@
 <div ng-include="'views/navbar.html'"></div>
-<h2>User Log-In</h2>
+
 <div>
   <flash:messages></flash:messages>
 </div>
 
-<form name="login_form" ng-submit="login.sendForm(email, password)" class="form-horizontal" role="form">
+<h2>User Sign In</h2>
+<form name="login_form" ng-submit="account.sendFormSignin()" class="form-horizontal" role="form">
   <div class="form-group row">
     <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email</label>
     <div class="col-sm-6">
-      <input class='short_field' type="email" class="form-control" name="email" ng-model="login.email">
+      <input class='short_field' type="email" class="form-control" name="email" ng-model="account.email">
     </div>
   </div>
   <div class="form-group row">
     <label for="password" class="col-sm-2 col-sm-offset-2 control-label">Password</label>
     <div class="col-sm-6">
-      <input class='short_field' type="password" class="form-control" name="password" ng-model="login.password">
+      <input class='short_field' type="password" class="form-control" name="password" ng-model="accout.password">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-offset-4 col-sm-10">
-      <button type="submit" class="btn">Log in</button>
+      <button type="submit" class="btn" ng-click="login.user=true">Log in</button>
     </div>
   </div>
 </form>

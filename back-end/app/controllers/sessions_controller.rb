@@ -3,12 +3,13 @@ class SessionsController < Devise::SessionsController
   before_filter :authenticate_user_from_token!, except: [:create]
 
   def create
-    user = User.find_for_database_authentication(email: params[:email])
+    user = get_user
     if user && user.valid_password?(params[:password])
       token = user.ensure_authentication_token
-      render json: {auth_token: token, user_id: user.id, is_user: true}
+      role = user.role
+      render json: {auth_token: token, user_id: user.id, name: user.name, is_subscriber: role.subscriber, is_artist: role.artist}
     else
-      render nothing: true, status: :unauthorized
+      render json: {messages: "Sign In Failed"}, status: 422
     end
   end
 
@@ -21,4 +22,11 @@ class SessionsController < Devise::SessionsController
   def session_user
     session[:user] = current_user
   end
+
+  private
+  def get_user
+    User.find_for_database_authentication(email: params[:email])
+  end
+
+
 end
