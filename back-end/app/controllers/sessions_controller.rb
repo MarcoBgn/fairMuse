@@ -4,12 +4,12 @@ class SessionsController < Devise::SessionsController
 
   def create
     user = get_user
-    if user && user.valid_password?(params[:password])
+    if user_and_type_valid?(user)
       token = user.ensure_authentication_token
       role = user.role
       render json: {auth_token: token, user_id: user.id, name: user.name, is_subscriber: role.subscriber, is_artist: role.artist}
     else
-      render json: {messages: "Sign In Failed"}, status: 422
+      render json: {messages: "Sign In Failed: wrong password or incorrect login"}, status: 422
     end
   end
 
@@ -27,6 +27,8 @@ class SessionsController < Devise::SessionsController
   def get_user
     User.find_for_database_authentication(email: params[:email])
   end
-
-
+  
+  def user_and_type_valid?(user)
+    user && user.valid_password?(params[:password]) && user.role.artist == params[:artist]
+  end
 end
