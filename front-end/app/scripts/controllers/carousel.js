@@ -5,7 +5,7 @@ fairMuse.controller('MyCarouselController', function () {
   this.myInterval = 5000;
   this.noWrapSlides = false;
   this.active = 0;
-  var pics = []
+  var pics = ["http://img.gawkerassets.com/img/17vzbduvh99gnjpg/original.jpg", "https://whileyouweresleeping.files.wordpress.com/2015/04/maxresdefault.jpg"]
   var slides = this.slides = [];
   var currIndex = 0;
 
@@ -17,7 +17,7 @@ fairMuse.controller('MyCarouselController', function () {
     });
   };
 
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 2; i++) {
     this.addSlide();
   }
 });

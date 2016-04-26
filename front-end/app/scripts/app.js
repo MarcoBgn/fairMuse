@@ -50,29 +50,19 @@ var fairMuse = angular
     controllerAs: 'about'
   })
   .when('/artist', {
-    templateUrl: 'views/artist.html',
-    controller: 'AccountCtrl',
-    controllerAs: 'account'
+    templateUrl: 'views/artist_access.html',
+    controller: 'AccessCtrl',
+    controllerAs: 'access'
   })
   .when('/listener',{
-    templateUrl: 'views/listener.html',
-    controller: 'AccountCtrl',
-    controllerAs: 'account'
+    templateUrl: 'views/listener_access.html',
+    controller: 'AccessCtrl',
+    controllerAs: 'access'
   })
   .when('/success', {
     templateUrl: 'views/success.html',
     controller: 'MainCtrl',
     controllerAs: 'main'
-  })
-  .when('/signup', {
-    templateUrl: 'views/signup.html',
-    controller: 'SignupCtrl',
-    controllerAs: 'signup'
-  })
-  .when('/login', {
-    templateUrl: 'views/login.html',
-    controller: 'LoginCtrl',
-    controllerAs: 'login'
   })
   .when('/useraccount', {
     templateUrl: 'views/user_account.html',

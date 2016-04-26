@@ -2,65 +2,65 @@
 <div>
   <flash:messages></flash:messages>
 </div>
-<h1>Are you an artist? This site is for you!</h1>
+<h1>Love listening to music? This site is for you!</h1>
 
 <ul class="nav nav-tabs">
-  <li class="signintab" ng-click="account.signUpTab=false">Sign in</li>
-  <li ng-click="account.signUpTab=true" class="signuptab">Sign up</li>
+  <li class="signintab" ng-click="access.signUpTab=false">Sign in</li>
+  <li ng-click="access.signUpTab=true" class="signuptab">Sign up</li>
 </ul>
 
-<div ng-show="!account.signUpTab">
-<h2>Artist Sign In</h2>
-<form name="login_form" ng-submit="account.sendFormSignin()" class="form-horizontal" role="form">
+<div ng-show="!access.signUpTab">
+<h2>Listener Sign In</h2>
+<form name="login_form" ng-submit="access.sendFormSignin()" class="form-horizontal" role="form">
   <div class="form-group row">
     <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email</label>
     <div class="col-sm-6">
-      <input class='short_field' type="email" class="form-control" name="email" ng-model="account.email">
+      <input class='short_field' type="email" class="form-control" name="email" ng-model="access.email">
     </div>
   </div>
   <div class="form-group row">
     <label for="password" class="col-sm-2 col-sm-offset-2 control-label">Password</label>
     <div class="col-sm-6">
-      <input class='short_field' type="password" class="form-control" name="password" ng-model="account.password">
+      <input class='short_field' type="password" class="form-control" name="password" ng-model="access.password">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-offset-4 col-sm-10">
-      <button type="submit" class="btn accountbutton">Log in</button>
+      <button type="submit" ng-click="access.artist=false" class="btn">Log in</button>
     </div>
   </div>
 </form>
 </div>
-<div ng-show="account.signUpTab">
-  <h2>Artist Sign Up</h2>
-  <form name="signup_form" ng-submit="account.sendFormSignup()" class="form-horizontal" role="form">
+<div ng-show="access.signUpTab">
+  <h2>Listener Sign Up</h2>
+  <form name="signup_form" ng-submit="access.sendFormSignup()" class="form-horizontal" role="form">
     <div class="form-group row">
       <div class="form-group row">
         <label for="name" class="col-sm-2 col-sm-offset-2 control-label">Name</label>
        <div class="col-sm-6">
-         <input class='short_field' type="text" class="form-control" name="name" ng-model="account.username">
+         <input class='short_field' type="text" class="form-control" name="name" ng-model="access.username">
        </div>
      </div>
       <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email</label>
       <div class="col-sm-6">
-        <input class='short_field' type="email" class="form-control" name="email" ng-model="account.email">
+        <input class='short_field' type="email" class="form-control" name="email" ng-model="access.email">
       </div>
     </div>
     <div class="form-group row">
       <label for="password" class="col-sm-2 col-sm-offset-2 control-label">Password</label>
       <div class="col-sm-6">
-        <input class='short_field' type="password" class="form-control" name="password" ng-model="account.password">
+        <input class='short_field' type="password" class="form-control" name="password" ng-model="access.password">
       </div>
     </div>
     <div class="form-group row">
       <label for="password_confirmation" class="col-sm-2 col-sm-offset-2 control-label"name="password">Password Confirmation</label>
       <div class="col-sm-6">
-        <input class='short_field' type="password" class="form-control"  name="password_confirmation" ng-model="account.password_confirmation">
+        <input class='short_field' type="password" class="form-control"  name="password_confirmation" ng-model="access.password_confirmation">
       </div>
     </div>
     <div class="form-group row">
       <div class="col-sm-offset-4 col-sm-10">
-        <button type="submit" ng-click="account.artist=true" class="btn accountbutton">Sign up
+        <button type="submit" ng-click="access.artist=false" class="btn accessbutton">Sign up
         </button>
       </div>
     </div>

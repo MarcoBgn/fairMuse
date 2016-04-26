@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fairMuseApp')
-  .controller('AccountCtrl', function(authenticationService, signupService, localStorageService, flash, $location) {
+  .controller('AccessCtrl', function(authenticationService, signupService, localStorageService, flash, $location) {
     var self = this;
     var location;
     location = $location;
