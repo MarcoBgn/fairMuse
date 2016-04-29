@@ -13,3 +13,5 @@
 /tmp
 
 /coverage/*
+
+/public/system/*
