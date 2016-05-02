@@ -19,7 +19,8 @@ angular.module('fairMuseApp')
 
     self.sendFormSignin = function() {
       self.userInfo = {email: self.email,
-                       password: self.password
+                       password: self.password,
+                       artist: self.artist
                        };
       var promise = authenticationService.login(self.userInfo);
       promise.then(success, error);

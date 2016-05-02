@@ -21,7 +21,7 @@ feature 'artists can sign up' do
     fill_in 'password', with: '12345678'
     fill_in 'password_confirmation', with: '12345678'
     sleep(2)
-    find(:css, ".accountbutton").click
+    find(:css, ".accessbutton").click
     sleep(2)
     expect(page).to have_content('Log out')
     find(:css, "#log_out").click
@@ -37,7 +37,7 @@ feature 'artists can sign up' do
     fill_in 'password', with: '12345678'
     fill_in 'password_confirmation', with: '12345678'
     sleep(2)
-    find(:css, ".accountbutton").click
+    find(:css, ".accessbutton").click
     sleep(2)
     expect(page).to have_content('Email has already been taken')
   end
@@ -49,7 +49,7 @@ feature 'artists can sign up' do
     fill_in 'email', with: 'artist@email.com'
     fill_in 'password', with: '12345678'
     sleep(2)
-    find(:css, ".accountbutton").click
+    find(:css, ".accessbutton").click
     sleep(2)
     expect(page).to have_content('Log out')
     find(:css, "#log_out").click
