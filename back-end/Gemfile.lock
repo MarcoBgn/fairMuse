@@ -247,6 +247,7 @@ DEPENDENCIES
   rspec-rails
   selenium-webdriver
   shoulda
+  simplecov
   spring
   stripe
   web-console

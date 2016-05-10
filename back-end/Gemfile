@@ -28,6 +28,8 @@ gem 'jbuilder'
 
 gem 'coveralls', require: false
 
+gem 'simplecov', require:false, group: :test
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'

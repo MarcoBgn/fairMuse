@@ -5,8 +5,7 @@ fairMuse.controller('MyCarouselController', function () {
   this.myInterval = 5000;
   this.noWrapSlides = false;
   this.active = 0;
-  var pics = ["http://bsrv.wallpapersten.com/media/wp/1-17-4/brunette-with-headphones-enjoying-the-music-1080p-girl-desktop-wallpaper-27464.jpg", "http://img.gawkerassets.com/img/17vzbduvh99gnjpg/original.jpg", "https://whileyouweresleeping.files.wordpress.com/2015/04/maxresdefault.jpg"]
-
+  var pics = ["http://img.gawkerassets.com/img/17vzbduvh99gnjpg/original.jpg", "https://whileyouweresleeping.files.wordpress.com/2015/04/maxresdefault.jpg"]
   var slides = this.slides = [];
   var currIndex = 0;
 
@@ -18,7 +17,7 @@ fairMuse.controller('MyCarouselController', function () {
     });
   };
 
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 2; i++) {
     this.addSlide();
   }
 });

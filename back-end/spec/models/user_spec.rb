@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user){described_class.new}
-  
+
   it { is_expected.to have_many :streams }
+  it { is_expected.to have_one :role}
 
   it "generates an authentication token" do
     allow(user).to receive(:email).and_return 'dave@gmail.com'

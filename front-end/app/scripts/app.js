@@ -26,7 +26,7 @@ var fairMuse = angular
     },
     responseError: function(response) {
       if (response.status === 401) {
-        $location.path('/login');
+        $location.path('/');
       }
       return $q.reject(response);
     }
@@ -44,35 +44,25 @@ var fairMuse = angular
     controller: 'MainCtrl',
     controllerAs: 'main'
   })
-  .when('/artistsignup',{
-    templateUrl: 'views/artist_signup.html',
-    controller: 'ArtistCtrl',
-    controllerAs: 'artist'
-  })
-  .when('/artistsignin',{
-    templateUrl: 'views/artist_signin.html',
-    controller: 'ArtistSigninCtrl',
-    controllerAs: 'artistSignin'
-  })
   .when('/about', {
     templateUrl: 'views/about.html',
     controller: 'AboutCtrl',
     controllerAs: 'about'
   })
+  .when('/artist', {
+    templateUrl: 'views/artist_access.html',
+    controller: 'AccessCtrl',
+    controllerAs: 'access'
+  })
+  .when('/listener',{
+    templateUrl: 'views/listener_access.html',
+    controller: 'AccessCtrl',
+    controllerAs: 'access'
+  })
   .when('/success', {
     templateUrl: 'views/success.html',
     controller: 'MainCtrl',
     controllerAs: 'main'
-  })
-  .when('/signup', {
-    templateUrl: 'views/signup.html',
-    controller: 'SignupCtrl',
-    controllerAs: 'signup'
-  })
-  .when('/login', {
-    templateUrl: 'views/login.html',
-    controller: 'LoginCtrl',
-    controllerAs: 'login'
   })
   .when('/useraccount', {
     templateUrl: 'views/user_account.html',
